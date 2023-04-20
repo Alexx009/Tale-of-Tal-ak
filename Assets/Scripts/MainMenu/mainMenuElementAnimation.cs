@@ -24,8 +24,8 @@ public class mainMenuElementAnimation : MonoBehaviour
         buttonsPanel.LeanMoveY(0, 0.5f).setEaseLinear().setDelay(1);
 
         RectTransform titlePanelRect = titlePanel.GetComponent<RectTransform>();
-        titlePanelRect.localPosition = new Vector3(-1900, 640, 0);
-        titlePanelRect.LeanMoveX(100, 1).setEase(inType).setDelay(1);
+        titlePanelRect.localPosition = new Vector3(-16900, 0, 0);
+        titlePanelRect.LeanMoveX(1000, 1).setEase(inType).setDelay(1);
 
         settingsPanelRect.LeanSetPosX(220);
 
