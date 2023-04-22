@@ -23,6 +23,7 @@ public Material originalMaterial;
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, rayLength, layerMask))
             {
+
 Debug.Log(hit.collider.name);
                 // (hit.collider.gameObject == gameObject)
                 // {
@@ -39,9 +40,9 @@ Debug.Log(hit.collider.name);
                 // }
             }
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            GetComponent<Renderer>().material = originalMaterial;
-        }
+        // if (Input.GetMouseButtonUp(0))
+        // {
+        //     GetComponent<Renderer>().material = originalMaterial;
+        // }
     }
 }
