@@ -7,6 +7,7 @@ using System.Collections;
 public class button2 : MonoBehaviour
 {
     public Camera mainCamera;
+    public GameObject turret;
     public TextMeshProUGUI text;
     public float rayLength;
     public LayerMask layerMask;
@@ -17,8 +18,12 @@ public class button2 : MonoBehaviour
     private float buttonZaxis;
     private bool levelComplete = false;
 
+    //reference Script
+    private ProjectileTurret projectileTurretScript;
+
     private void Start()
     {
+        projectileTurretScript = GameObject.Find("TurretTower").GetComponentInChildren<ProjectileTurret>();
         buttons = GameObject.FindGameObjectsWithTag("Button2");
         originalMaterials = new Material[buttons.Length];
         buttonZaxis = buttons[0].transform.localPosition.z;
@@ -67,8 +72,8 @@ private List<int> clickedButtons = new List<int>();
                             {
                                 Debug.Log("you win");
                                 StartCoroutine(levelPassed());
-                                
-                            }
+                                turret.SetActive(false);
+                           }
                             else
                             {
                                 StartCoroutine(ResetButtonState());
@@ -81,11 +86,12 @@ private List<int> clickedButtons = new List<int>();
     }
     IEnumerator levelPassed(){
         text.enabled = true;
-        
+
         yield return new WaitForSeconds(2);
 
         text.enabled = false;
         levelComplete = true;
+       
 
     }
 
