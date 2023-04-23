@@ -13,6 +13,7 @@ TagManager:
   - Button3
   - Button4
   - Button5
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - 
+  - Button
   - 
   - 
   - 
