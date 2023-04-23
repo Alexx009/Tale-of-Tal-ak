@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using System.Collections;
 
-public class button : MonoBehaviour
+public class button5 : MonoBehaviour
 {
     public Camera mainCamera;
     public TextMeshProUGUI text;
@@ -19,7 +19,7 @@ public class button : MonoBehaviour
 
     private void Start()
     {
-        buttons = GameObject.FindGameObjectsWithTag("Button");
+        buttons = GameObject.FindGameObjectsWithTag("Button5");
         originalMaterials = new Material[buttons.Length];
         buttonZaxis = buttons[0].transform.localPosition.z;
         text.SetText("Level Passed!");
@@ -63,7 +63,7 @@ private List<int> clickedButtons = new List<int>();
                         }
                         else if (clickedButtons.Count == 3)
                         {
-                            if (clickedButtons[0] == 0 && clickedButtons[1] == 2 && clickedButtons[2] == 4)
+                            if (clickedButtons[0] == 2 && clickedButtons[1] == 5 && clickedButtons[2] == 3)
                             {
                                 Debug.Log("you win");
                                 StartCoroutine(levelPassed());
