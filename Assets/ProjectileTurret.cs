@@ -10,7 +10,8 @@ public class ProjectileTurret: MonoBehaviour
     [SerializeField] private Transform spawnPoint; // The position to spawn the projectile from
     [SerializeField] private float projectileForce = 100f; // The force with which to fire the projectile
     [SerializeField] private float fireRate = 1f; // The rate of fire (in seconds)
-
+     
+    private float projectileLifeTime = 5f;
     private void Start()
     {
         // Start firing projectiles
@@ -26,7 +27,7 @@ public class ProjectileTurret: MonoBehaviour
 
             // Add an impulse force to the projectile in the forward direction of the spawn point
             projectile.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * projectileForce, ForceMode.Impulse);
-
+                Destroy(projectile, projectileLifeTime);
             // Wait for the specified fire rate before firing the next projectile
             yield return new WaitForSeconds(fireRate);
         }
