@@ -20,11 +20,12 @@ public class bridgeMove : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            RaycastHit hit1;
+            Debug.Log("true");
+            RaycastHit hit;
             Vector3 centerScreen = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
-            Ray ray1 = mainCamera.ScreenPointToRay(centerScreen);
+            Ray ray = mainCamera.ScreenPointToRay(centerScreen);
 
-            if (Physics.Raycast(ray1, out hit1, rayLength, layerMask))
+            if (Physics.Raycast(ray, out hit, rayLength, layerMask))
             {
                 // Toggle the button state
                 buttonState = !buttonState;
