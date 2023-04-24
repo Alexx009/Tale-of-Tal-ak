@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - death
+  - Bullet
+  - Ground
+  - Button
+  - Button1
+  - Button2
+  - Button3
+  - Button4
+  - Button5
+  - Bullet
+  - JumpPad
   layers:
   - Default
   - TransparentFX
@@ -12,11 +23,11 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Button
+  - Wall
+  - Obstacle
+  - WhatIsGround
+  - bridge
   - 
   - 
   - 
