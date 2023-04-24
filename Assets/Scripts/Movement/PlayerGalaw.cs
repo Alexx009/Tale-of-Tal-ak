@@ -37,42 +37,43 @@ public class PlayerGalaw : MonoBehaviour
     {
 
     }
+void Update()
+{
+    isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-    void Update()
+    if (isGrounded && velocity.y < 0)
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0)
-        {
-            grounded = 1;
-            velocity.y = -2f;
-        }
-        else
-        {
-            grounded = 0;
-        }
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * speed * Time.deltaTime);
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(talonTaas * -2 * gravity);
-
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            speed = 30f;
-
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+        grounded = 1;
+        velocity.y = -2f;
+        useTime = 0; // Reset the double jump counter
+    }
+    else
+    {
+        grounded = 0;
     }
 
+    float x = Input.GetAxis("Horizontal");
+    float z = Input.GetAxis("Vertical");
 
+    Vector3 move = transform.right * x + transform.forward * z;
+
+    controller.Move(move * speed * Time.deltaTime);
+
+    if (Input.GetButtonDown("Jump"))
+    {
+        if (isGrounded || useTime < 1) // First and second jump
+        {
+            velocity.y = Mathf.Sqrt(talonTaas * -2 * gravity);
+            useTime++;
+        }
+    }
+
+    if (Input.GetKeyDown(KeyCode.G))
+    {
+        speed = 30f;
+    }
+
+    velocity.y += gravity * Time.deltaTime;
+    controller.Move(velocity * Time.deltaTime);
+}
 }
