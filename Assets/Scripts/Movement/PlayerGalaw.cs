@@ -74,5 +74,5 @@ public class PlayerGalaw : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-
+    
 }
