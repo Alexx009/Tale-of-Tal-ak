@@ -21,6 +21,7 @@ public class PlayerGalaw : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     public Transform groundCheck;
+    public float jumpPadForce = 0f;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
@@ -81,14 +82,12 @@ private void OnControllerColliderHit(ControllerColliderHit hit) {
     switch(hit.gameObject.tag)
     {
         case "JumpPad":
-            Debug.Log("in jumpad");
             gravity = -13f;
-            velocity.y = Mathf.Sqrt(20f * -2 * gravity);
+            velocity.y = Mathf.Sqrt(jumpPadForce * -2 * gravity);
             useTime++;
             break;
 
         case "Ground":
-            Debug.Log("not in jumpad");
             gravity = -9.8f;
             talonTaas = 2f;
             break;
