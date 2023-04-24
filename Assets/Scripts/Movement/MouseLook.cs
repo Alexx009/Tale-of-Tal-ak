@@ -11,7 +11,8 @@ public class MouseLook : MonoBehaviour
     float xRot = 0f;
     void Start()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
