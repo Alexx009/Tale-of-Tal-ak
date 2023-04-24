@@ -1,5 +1,6 @@
  using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -75,5 +76,22 @@ void Update()
 
     velocity.y += gravity * Time.deltaTime;
     controller.Move(velocity * Time.deltaTime);
+}
+private void OnControllerColliderHit(ControllerColliderHit hit) {
+    switch(hit.gameObject.tag)
+    {
+        case "JumpPad":
+            Debug.Log("in jumpad");
+            gravity = -13f;
+            velocity.y = Mathf.Sqrt(20f * -2 * gravity);
+            useTime++;
+            break;
+
+        case "Ground":
+            Debug.Log("not in jumpad");
+            gravity = -9.8f;
+            talonTaas = 2f;
+            break;
+    }
 }
 }

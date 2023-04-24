@@ -14,6 +14,7 @@ TagManager:
   - Button4
   - Button5
   - Bullet
+  - JumpPad
   layers:
   - Default
   - TransparentFX
