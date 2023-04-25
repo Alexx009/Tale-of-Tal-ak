@@ -61,3 +61,6 @@ crashlytics-build.properties
 
 .fake
 UserSettings/Layouts/default-2021.dwlt
+*.dwlt
+*.asset
+*.asset
