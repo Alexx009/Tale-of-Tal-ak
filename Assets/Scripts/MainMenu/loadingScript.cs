@@ -18,7 +18,7 @@ public class loadingScript : MonoBehaviour
         StartCoroutine(LoadLevelASync(levelToLoad));
     }
 
-    IEnumerator LoadLevelASync(string levelToLoad){
+    public IEnumerator LoadLevelASync(string levelToLoad){
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
 
         while (!loadOperation.isDone)

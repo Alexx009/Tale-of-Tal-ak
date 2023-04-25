@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class KeyInteractor : MonoBehaviour
 {
@@ -28,10 +29,16 @@ public class KeyInteractor : MonoBehaviour
     [SerializeField] GameObject thirdWallPointer;
     [SerializeField] GameObject pressE;
     [SerializeField] GameObject questTitle;
-     Animator questTitleAnimator;
+    Animator questTitleAnimator;
     public int acquiredKey = 0;
     public TMP_Text questText;
     public TMP_Text lvlComplete;
+
+
+    public loadingScript loadingScript;
+    [SerializeField] private GameObject loadingScreen;
+    [SerializeField] private GameObject playerHud;
+    [SerializeField] private Slider loadingSlider;
 
 
 
@@ -48,10 +55,13 @@ public class KeyInteractor : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.N)){
+            StartCoroutine(SecondStager());
+        }
         //raycast
         active = Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out RaycastHit hitinfo, 5f, pangkeylang);
         actives = Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out RaycastHit hitInfo, 5f, pangPader);
-       
+
         //raycast check
         if (active == true)
         {
@@ -238,6 +248,9 @@ public class KeyInteractor : MonoBehaviour
     }
     IEnumerator SecondStager()
     {
+        playerHud.SetActive(false);
+        loadingScreen.SetActive(true);
+        StartCoroutine(loadingScript.LoadLevelASync("Stage2"));
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
