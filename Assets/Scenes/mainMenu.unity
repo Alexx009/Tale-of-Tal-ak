@@ -5535,12 +5535,12 @@ PrefabInstance:
     - target: {fileID: 1413535536080481177, guid: a0441ecd2877638459fc49387150b03d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1413535536832454906, guid: a0441ecd2877638459fc49387150b03d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1413535537116660627, guid: a0441ecd2877638459fc49387150b03d,
         type: 3}
@@ -5656,6 +5656,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: loadingScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413535537116660631, guid: a0441ecd2877638459fc49387150b03d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0441ecd2877638459fc49387150b03d, type: 3}
