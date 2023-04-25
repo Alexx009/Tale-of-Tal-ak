@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!1001 &1300253572497540826
+=======
+--- !u!1001 &605481373428039598
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -41,12 +45,20 @@ PrefabInstance:
         type: 3}
       propertyPath: controller
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 696845481419137895}
+=======
+      objectReference: {fileID: 1425326473010469395}
+>>>>>>> Stashed changes
     - target: {fileID: 1990834000623887779, guid: 8c1a125dccb98594ea852b9a716a1e48,
         type: 3}
       propertyPath: groundCheck
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 696845479898297404}
+=======
+      objectReference: {fileID: 1425326473723612488}
+>>>>>>> Stashed changes
     - target: {fileID: 1990834000623887779, guid: 8c1a125dccb98594ea852b9a716a1e48,
         type: 3}
       propertyPath: groundMask.m_Bits
@@ -176,11 +188,16 @@ PrefabInstance:
         type: 3}
       propertyPath: playerBody
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 696845481419137894}
+=======
+      objectReference: {fileID: 1425326473010469394}
+>>>>>>> Stashed changes
     m_RemovedComponents:
     - {fileID: 1990834000623887806, guid: 8c1a125dccb98594ea852b9a716a1e48, type: 3}
     - {fileID: 1990834000840785887, guid: 8c1a125dccb98594ea852b9a716a1e48, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c1a125dccb98594ea852b9a716a1e48, type: 3}
+<<<<<<< Updated upstream
 --- !u!4 &696845479898297404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1990834000222663398, guid: 8c1a125dccb98594ea852b9a716a1e48,
@@ -218,6 +235,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1990834000623887800, guid: 8c1a125dccb98594ea852b9a716a1e48,
     type: 3}
   m_PrefabInstance: {fileID: 1300253572497540826}
+=======
+--- !u!114 &1425326473010469389 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1990834000623887779, guid: 8c1a125dccb98594ea852b9a716a1e48,
+    type: 3}
+  m_PrefabInstance: {fileID: 605481373428039598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425326473010469398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0f5f09e9c31f54a848b3653bde3ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1425326473010469394 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1990834000623887804, guid: 8c1a125dccb98594ea852b9a716a1e48,
+    type: 3}
+  m_PrefabInstance: {fileID: 605481373428039598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &1425326473010469395 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 1990834000623887805, guid: 8c1a125dccb98594ea852b9a716a1e48,
+    type: 3}
+  m_PrefabInstance: {fileID: 605481373428039598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1425326473010469398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1990834000623887800, guid: 8c1a125dccb98594ea852b9a716a1e48,
+    type: 3}
+  m_PrefabInstance: {fileID: 605481373428039598}
+>>>>>>> Stashed changes
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1646076427
 Animator:
@@ -226,7 +274,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 696845481419137890}
+=======
+  m_GameObject: {fileID: 1425326473010469398}
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
@@ -245,14 +297,23 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 696845481419137890}
+=======
+  m_GameObject: {fileID: 1425326473010469398}
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5380d75f0a284e74fa1c927dac9dad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   cam: {fileID: 696845481032317187}
   playerGalawan: {fileID: 696845481419137913}
+=======
+  cam: {fileID: 1425326473394864247}
+  playerGalawan: {fileID: 1425326473010469389}
+>>>>>>> Stashed changes
   palawOne: {fileID: 0}
   palawTwo: {fileID: 0}
   teleporter: {fileID: 0}
@@ -289,12 +350,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 696845481419137890}
+=======
+  m_GameObject: {fileID: 1425326473010469398}
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7054da0662cd054d8785e563503a78c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   pleyer: {fileID: 696845481419137890}
   cameraTwo: {fileID: 0}
   cameraOne: {fileID: 696845481032317198}
@@ -322,3 +388,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0f5f09e9c31f54a848b3653bde3ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  pleyer: {fileID: 1425326473010469398}
+  cameraTwo: {fileID: 0}
+  cameraOne: {fileID: 1425326473394864250}
+--- !u!4 &1425326473394864247 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1990834000840785881, guid: 8c1a125dccb98594ea852b9a716a1e48,
+    type: 3}
+  m_PrefabInstance: {fileID: 605481373428039598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1425326473394864250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1990834000840785876, guid: 8c1a125dccb98594ea852b9a716a1e48,
+    type: 3}
+  m_PrefabInstance: {fileID: 605481373428039598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &997282583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425326473394864250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c108cc576df10994f9b52e580ec115e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mSens: 700
+  playerBody: {fileID: 1425326473010469394}
+--- !u!4 &1425326473723612488 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1990834000222663398, guid: 8c1a125dccb98594ea852b9a716a1e48,
+    type: 3}
+  m_PrefabInstance: {fileID: 605481373428039598}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes

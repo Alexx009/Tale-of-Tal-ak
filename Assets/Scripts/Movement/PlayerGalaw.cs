@@ -27,6 +27,9 @@ public class PlayerGalaw : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public Animator animation;
+    public bool playAnimation = true;
+
 
     public void OnTriggerEnter(Collider other)
     {
@@ -59,6 +62,7 @@ void Update()
     float x = Input.GetAxis("Horizontal");
     float z = Input.GetAxis("Vertical");
 
+<<<<<<< Updated upstream
     Vector3 move = transform.right * x + transform.forward * z;
 
     controller.Move(move * speed * Time.deltaTime);
@@ -69,6 +73,46 @@ void Update()
         {
             velocity.y = Mathf.Sqrt(talonTaas * -2 * gravity);
             useTime++;
+=======
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        
+
+        Vector3 move = transform.right * x + transform.forward * z;
+        controller.Move(move * speed * Time.deltaTime);
+        bool isMoving = (x != 0 || z != 0);
+    
+        // Update the animation parameter based on whether the character is moving or not
+        animation.SetBool("isRun", !isMoving);
+        animation.SetBool("isRun", isMoving);
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(talonTaas * -2 * gravity);
+
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = 30f;
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit) {
+        switch(hit.gameObject.tag)
+        {
+            case "JumpPad":
+                gravity = -13f;
+                velocity.y = Mathf.Sqrt(jumpPadForce * -2 * gravity);
+                useTime++;
+                break;
+
+            case "Ground":
+                gravity = -9.8f;
+                talonTaas = 2f;
+                break;
+>>>>>>> Stashed changes
         }
     }
 
