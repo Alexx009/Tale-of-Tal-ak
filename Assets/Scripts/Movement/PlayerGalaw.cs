@@ -1,4 +1,4 @@
- using System.Collections;
+     using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,7 +6,9 @@ using UnityEngine;
 
 
 public class PlayerGalaw : MonoBehaviour
-{
+{  private GameObject movingPlatform;
+    private bool isOnPlatform = false;
+    private Vector3 lastPlatformPosition;
     public CharacterController controller;
 
     public float speed = 12f;
@@ -92,5 +94,6 @@ private void OnControllerColliderHit(ControllerColliderHit hit) {
             talonTaas = 2f;
             break;
     }
+    
 }
 }
