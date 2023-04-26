@@ -87,7 +87,21 @@ void Update()
                 velocity.y = Mathf.Sqrt(jumpPadForce * -2 * gravity);
                 useTime++;
                 break;
-
+            case "JumpPadAutomatic":
+                gravity = -13f;
+                velocity.y = Mathf.Sqrt(40f * -2 * gravity);
+                useTime++;
+                break;
+            case "JumpPadAutomatic30":
+                gravity = -13f;
+                velocity.y = Mathf.Sqrt(30f * -2 * gravity);
+                useTime++;
+                break;
+            case "JumpPadAutomatic20":
+                gravity = -13f;
+                velocity.y = Mathf.Sqrt(20f * -2 * gravity);
+                useTime++;
+                break;
             case "Ground":
                 gravity = -9.8f;
                 talonTaas = 2f;

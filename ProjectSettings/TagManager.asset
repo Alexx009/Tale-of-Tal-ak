@@ -17,6 +17,9 @@ TagManager:
   - JumpPad
   - teleport
   - MovingPlatform
+  - JumpPadAutomatic
+  - JumpPadAutomatic30
+  - JumpPadAutomatic20
   layers:
   - Default
   - TransparentFX
