@@ -28,8 +28,10 @@ public class PlayerGalaw : MonoBehaviour
     public LayerMask groundMask;
 
     public Animator animation;
-    public bool playAnimation = true;
-
+            public bool playAnimation = true;
+        private void OnCollisionEnter(Collision other) {
+            Debug.Log(other);
+        }
 
     public void OnTriggerEnter(Collider other)
     {

@@ -51,7 +51,8 @@ public class bridgeMove : MonoBehaviour
                     {
                         Debug.Log("False");
                         LeanTween.rotateY(objectToRotate, rotateOffValue, rotationTime).setEase(rotationEaseType);
-                    }LeanTween.rotateZ(objectToRotate, rotateOffValueZ, rotationTime).setEase(rotationEaseType);
+                        LeanTween.rotateZ(objectToRotate, rotateOffValueZ, rotationTime).setEase(rotationEaseType);
+                    }
                 }
             }
         }
