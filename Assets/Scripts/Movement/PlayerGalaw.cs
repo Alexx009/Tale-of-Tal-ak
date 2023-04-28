@@ -4,7 +4,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-
 public class PlayerGalaw : MonoBehaviour
 {  private GameObject movingPlatform;
     private bool isOnPlatform = false;
@@ -26,12 +25,11 @@ public class PlayerGalaw : MonoBehaviour
     public float jumpPadForce = 0f;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    private float x;
+    private float z;
 
     public Animator animation;
             public bool playAnimation = true;
-        private void OnCollisionEnter(Collision other) {
-            Debug.Log(other);
-        }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -40,33 +38,36 @@ public class PlayerGalaw : MonoBehaviour
             defaultHP = defaultHP - 100f;
             print("The collision is working");
         }
-
     }
+
+
+
 void Update()
 {
     isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
+    
     if (isGrounded && velocity.y < 0)
     {
         grounded = 1;
         velocity.y = -2f;
         useTime = 0; // Reset the double jump counter
+        
+        bool isMoving = (x != 0 || z != 0);
+        // Update the animation parameter based on whether the character is moving or not
+        animation.SetBool("isRun", !isMoving);
+        animation.SetBool("isRun", isMoving);
     }
     else
     {
         grounded = 0;
     }
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
         
 
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
-        bool isMoving = (x != 0 || z != 0);
-    
-        // Update the animation parameter based on whether the character is moving or not
-        animation.SetBool("isRun", !isMoving);
-        animation.SetBool("isRun", isMoving);
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(talonTaas * -2 * gravity);

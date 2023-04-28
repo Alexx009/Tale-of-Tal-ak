@@ -20,6 +20,7 @@ TagManager:
   - JumpPadAutomatic
   - JumpPadAutomatic30
   - JumpPadAutomatic20
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - Obstacle
   - WhatIsGround
   - bridge
-  - 
+  - Enemy
   - 
   - 
   - 

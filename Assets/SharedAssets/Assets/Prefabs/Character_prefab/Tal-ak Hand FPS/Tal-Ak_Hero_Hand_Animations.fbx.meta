@@ -33,8 +33,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|1_run (1)
-      takeName: Armature|1_run
+      name: Armature|1_left_jab
+      takeName: Armature|1_left_jab
       internalID: -3959845536271697360
       firstFrame: 0
       lastFrame: 15
