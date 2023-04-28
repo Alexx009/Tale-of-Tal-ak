@@ -12,8 +12,29 @@ public class playerPunch : MonoBehaviour {
     public Camera mainCamera;
     public float rayLength;
     public LayerMask layerMask;
+    
+
+
+    public float kbforce = 10f;
+    public float kbduration = 0.5f;
+    private float kbtimer = 0f;
+
+    public float knockbackDistanceThreshold = 5f;
+
+    private Vector3 kbdirection;
 
     private void Update() {
+
+
+        if (kbtimer > 0)
+        {
+            // Move the object in the knockback direction
+            transform.position += kbdirection * kbforce * Time.deltaTime;
+
+            // Reduce the knockback timer
+            kbtimer -= Time.deltaTime;
+        }
+
         if (Input.GetKeyDown(leftPunchKey) && !isLeftPunchRunning) {
             StartCoroutine(PerformLeftPunch());
 
@@ -26,10 +47,23 @@ public class playerPunch : MonoBehaviour {
                     enemyHealth enemy = hit.transform.gameObject.GetComponent<enemyHealth>();
                     if (enemy != null) {
                         enemy.TakeDamage(10);
+
+                        // Calculate the knockback direction
+                        Vector3 knockbackDirection = (enemy.transform.position - transform.position).normalized;
+
+                        // Apply the knockback force to the enemy's Rigidbody
+                        Rigidbody enemyRigidbody = hit.transform.gameObject.GetComponent<Rigidbody>();
+                        if (enemyRigidbody != null) {
+                            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                            float knockbackForceScaled = kbforce * Mathf.Clamp01(1f - distance / knockbackDistanceThreshold);
+                            enemyRigidbody.AddForce(knockbackDirection * knockbackForceScaled, ForceMode.Impulse);
+                        }
                     }
                 }
             }
         }
+
+
         if (Input.GetKeyDown(rightPunchKey) && !isRightPunchRunning) {
             StartCoroutine(PerformRightPunch());
 
@@ -42,6 +76,17 @@ public class playerPunch : MonoBehaviour {
                     enemyHealth enemy = hit.transform.gameObject.GetComponent<enemyHealth>();
                     if (enemy != null) {
                         enemy.TakeDamage(10);
+
+                        // Calculate the knockback direction
+                        Vector3 knockbackDirection = (enemy.transform.position - transform.position).normalized;
+
+                        // Apply the knockback force to the enemy's Rigidbody
+                        Rigidbody enemyRigidbody = hit.transform.gameObject.GetComponent<Rigidbody>();
+                        if (enemyRigidbody != null) {
+                            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                            float knockbackForceScaled = kbforce * Mathf.Clamp01(1f - distance / knockbackDistanceThreshold);
+                            enemyRigidbody.AddForce(knockbackDirection * knockbackForceScaled, ForceMode.Impulse);
+                        }
                     }
                 }
             }

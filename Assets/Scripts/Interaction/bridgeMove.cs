@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
 public class bridgeMove : MonoBehaviour
 {
     public Camera mainCamera;
@@ -45,6 +44,7 @@ public class bridgeMove : MonoBehaviour
                         Debug.Log("true");
                         LeanTween.rotateY(objectToRotate, rotateOnValue, rotationTime).setEase(rotationEaseType);
                         LeanTween.rotateZ(objectToRotate, rotateOnValueZ, rotationTime).setEase(rotationEaseType);
+                        
                         
                     }
                     else
