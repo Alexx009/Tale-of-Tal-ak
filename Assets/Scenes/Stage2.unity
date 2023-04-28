@@ -2163,6 +2163,8 @@ MonoBehaviour:
     type: 3}
   rotateOnValue: -36
   rotateOffValue: 49
+  rotateOnValueZ: 0
+  rotateOffValueZ: 0
   rotationTime: 1
   rotationEaseType: 1
   objectId: bridge
@@ -4013,6 +4015,8 @@ MonoBehaviour:
   buttonOff: {fileID: 2100000, guid: b6e6c0b491768774db72d1887eb48ce2, type: 2}
   rotateOnValue: -90
   rotateOffValue: -150
+  rotateOnValueZ: 0
+  rotateOffValueZ: 0
   rotationTime: 1
   rotationEaseType: 1
   objectId: bridge1
@@ -7606,7 +7610,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 86b66ccde474b7f4cad41739b63e857a, type: 2}
+      objectReference: {fileID: 2100000, guid: d971185a7c0855a48b902e249754e5f4, type: 2}
     - target: {fileID: 919132149155446097, guid: 942edcb4aaeb7b144bb9a91fa82b307b,
         type: 3}
       propertyPath: m_Name
@@ -8934,6 +8938,8 @@ MonoBehaviour:
   buttonOff: {fileID: 2100000, guid: b6e6c0b491768774db72d1887eb48ce2, type: 2}
   rotateOnValue: -90
   rotateOffValue: -150
+  rotateOnValueZ: 0
+  rotateOffValueZ: 0
   rotationTime: 1
   rotationEaseType: 1
   objectId: bridge1
