@@ -16,6 +16,8 @@ public class bridgeMove : MonoBehaviour
 
     public float rotateOnValue;
     public float rotateOffValue;
+    public float rotateOnValueZ;
+    public float rotateOffValueZ;
     public float rotationTime;
     public LeanTweenType rotationEaseType;
 
@@ -42,12 +44,14 @@ public class bridgeMove : MonoBehaviour
                     {
                         Debug.Log("true");
                         LeanTween.rotateY(objectToRotate, rotateOnValue, rotationTime).setEase(rotationEaseType);
+                        LeanTween.rotateZ(objectToRotate, rotateOnValueZ, rotationTime).setEase(rotationEaseType);
+                        
                     }
                     else
                     {
                         Debug.Log("False");
                         LeanTween.rotateY(objectToRotate, rotateOffValue, rotationTime).setEase(rotationEaseType);
-                    }
+                    }LeanTween.rotateZ(objectToRotate, rotateOffValueZ, rotationTime).setEase(rotationEaseType);
                 }
             }
         }
