@@ -56,10 +56,13 @@ void Update()
         // Update the animation parameter based on whether the character is moving or not
         animation.SetBool("isRun", !isMoving);
         animation.SetBool("isRun", isMoving);
+        animation.SetBool("isDead", false);
+        
     }
     else
     {
         grounded = 0;
+        animation.SetBool("isDead", true);
     }
         x = Input.GetAxis("Horizontal");
         z = Input.GetAxis("Vertical");
@@ -67,11 +70,11 @@ void Update()
 
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
-
+        
+        
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(talonTaas * -2 * gravity);
-
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
