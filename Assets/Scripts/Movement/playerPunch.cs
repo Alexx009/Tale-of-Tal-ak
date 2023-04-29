@@ -12,16 +12,25 @@ public class playerPunch : MonoBehaviour {
     public Camera mainCamera;
     public float rayLength;
     public LayerMask layerMask;
+
+    public cameraShake cameraShake;
+
+void Start()
+{
+    // Get a reference to the CameraShake script attached to the main camera
+    cameraShake = Camera.main.GetComponent<cameraShake>();
+}
+
     
 
 
     public float kbforce = 10f;
-    public float kbduration = 0.5f;
     private float kbtimer = 0f;
 
     public float knockbackDistanceThreshold = 5f;
 
     private Vector3 kbdirection;
+
 
     private void Update() {
 
@@ -48,6 +57,7 @@ public class playerPunch : MonoBehaviour {
                     if (enemy != null) {
                         enemy.TakeDamage(10);
 
+                        cameraShake.TriggerShake();
                         // Calculate the knockback direction
                         Vector3 knockbackDirection = (enemy.transform.position - transform.position).normalized;
 
@@ -62,7 +72,6 @@ public class playerPunch : MonoBehaviour {
                 }
             }
         }
-
 
         if (Input.GetKeyDown(rightPunchKey) && !isRightPunchRunning) {
             StartCoroutine(PerformRightPunch());
@@ -77,6 +86,8 @@ public class playerPunch : MonoBehaviour {
                     if (enemy != null) {
                         enemy.TakeDamage(10);
 
+                        cameraShake.TriggerShake();
+
                         // Calculate the knockback direction
                         Vector3 knockbackDirection = (enemy.transform.position - transform.position).normalized;
 
@@ -91,6 +102,7 @@ public class playerPunch : MonoBehaviour {
                 }
             }
         }
+
     }
 
     IEnumerator PerformLeftPunch() {

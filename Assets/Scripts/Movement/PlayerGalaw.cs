@@ -29,7 +29,7 @@ public class PlayerGalaw : MonoBehaviour
     private float z;
 
     public Animator animation;
-            public bool playAnimation = true;
+    public bool playAnimation = true;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -39,8 +39,6 @@ public class PlayerGalaw : MonoBehaviour
             print("The collision is working");
         }
     }
-
-
 
 void Update()
 {
