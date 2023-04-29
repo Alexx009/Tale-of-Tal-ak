@@ -4,7 +4,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-
 public class PlayerGalaw : MonoBehaviour
 {  private GameObject movingPlatform;
     private bool isOnPlatform = false;
@@ -26,23 +25,11 @@ public class PlayerGalaw : MonoBehaviour
     public float jumpPadForce = 0f;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    private float x;
+    private float z;
 
     public Animator animation;
     public bool playAnimation = true;
-
-    public float forceMagnitude = 10f; // Magnitude of the force to apply to the player
-    public float pushPower = 2.0f;
-     private bool isBeingPushed = false;
-     
-
-
-private void Start() {
-    controller = GetComponent<CharacterController>();
- //controller.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-  
-        // Change the collision detection mode to continuous
-       controller.detectCollisions = false;
-}
 
     public void OnTriggerEnter(Collider other)
     {
@@ -51,39 +38,41 @@ private void Start() {
             defaultHP = defaultHP - 100f;
             print("The collision is working");
         }
-
     }
+
 void Update()
 {
-
-
     isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
+    
     if (isGrounded && velocity.y < 0)
     {
         grounded = 1;
         velocity.y = -2f;
         useTime = 0; // Reset the double jump counter
+        
+        bool isMoving = (x != 0 || z != 0);
+        // Update the animation parameter based on whether the character is moving or not
+        animation.SetBool("isRun", !isMoving);
+        animation.SetBool("isRun", isMoving);
+        animation.SetBool("isDead", false);
+        
     }
     else
     {
         grounded = 0;
+        animation.SetBool("isDead", true);
     }
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
         
 
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
-        bool isMoving = (x != 0 || z != 0);
-    
-        // Update the animation parameter based on whether the character is moving or not
-        animation.SetBool("isRun", !isMoving);
-        animation.SetBool("isRun", isMoving);
+        
+        
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(talonTaas * -2 * gravity);
-
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -120,24 +109,7 @@ void Update()
             case "Ground":
                 gravity = -9.8f;
                 talonTaas = 2f;
-                
-            break;    
-    }
-     if (hit.gameObject.CompareTag("tentacle"))
-        {
-    
-            // Calculate the direction away from the collision point
-            Vector3 direction = hit.point - transform.position;
-            direction = -direction.normalized;
-
-            // Calculate the push direction
-            Vector3 pushDir = new Vector3(direction.x, 0, direction.z);
-            pushDir *= pushPower;
-
-            // Apply the force to the player in the direction away from the collision point
-          controller.Move(pushDir * Time.deltaTime * forceMagnitude);
+                break;
         }
-  
-
-}
+    }
 }

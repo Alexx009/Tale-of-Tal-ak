@@ -20,11 +20,7 @@ TagManager:
   - JumpPadAutomatic
   - JumpPadAutomatic30
   - JumpPadAutomatic20
-  - octofood
-  - octoFoodLand
-  - tentacleTrigger
   - Enemy
-  - tentacle
   layers:
   - Default
   - TransparentFX
@@ -38,8 +34,8 @@ TagManager:
   - Obstacle
   - WhatIsGround
   - bridge
-  - 
-  - 
+  - Enemy
+  - bridgeButton
   - 
   - 
   - 
