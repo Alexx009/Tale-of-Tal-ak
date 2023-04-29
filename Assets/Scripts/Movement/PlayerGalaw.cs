@@ -30,6 +30,19 @@ public class PlayerGalaw : MonoBehaviour
     public Animator animation;
     public bool playAnimation = true;
 
+    public float forceMagnitude = 10f; // Magnitude of the force to apply to the player
+    public float pushPower = 2.0f;
+     private bool isBeingPushed = false;
+     
+
+
+private void Start() {
+    controller = GetComponent<CharacterController>();
+ //controller.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+  
+        // Change the collision detection mode to continuous
+       controller.detectCollisions = false;
+}
 
     public void OnTriggerEnter(Collider other)
     {
@@ -42,6 +55,8 @@ public class PlayerGalaw : MonoBehaviour
     }
 void Update()
 {
+
+
     isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
     if (isGrounded && velocity.y < 0)
@@ -105,7 +120,24 @@ void Update()
             case "Ground":
                 gravity = -9.8f;
                 talonTaas = 2f;
-                break;
-        }
+                
+            break;    
     }
+     if (hit.gameObject.CompareTag("tentacle"))
+        {
+    
+            // Calculate the direction away from the collision point
+            Vector3 direction = hit.point - transform.position;
+            direction = -direction.normalized;
+
+            // Calculate the push direction
+            Vector3 pushDir = new Vector3(direction.x, 0, direction.z);
+            pushDir *= pushPower;
+
+            // Apply the force to the player in the direction away from the collision point
+          controller.Move(pushDir * Time.deltaTime * forceMagnitude);
+        }
+  
+
+}
 }
