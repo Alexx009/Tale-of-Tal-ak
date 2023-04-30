@@ -28,7 +28,7 @@ public class PlayerGalaw : MonoBehaviour
     private float x;
     private float z;
 
-    public Animator animation;
+    public new Animator animation;
     public bool playAnimation = true;
 
     public void OnTriggerEnter(Collider other)
