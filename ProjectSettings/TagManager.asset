@@ -21,6 +21,8 @@ TagManager:
   - JumpPadAutomatic30
   - JumpPadAutomatic20
   - Enemy
+  - lava
+  - RespawnPoint
   layers:
   - Default
   - TransparentFX
@@ -36,7 +38,7 @@ TagManager:
   - bridge
   - Enemy
   - bridgeButton
-  - 
+  - lava
   - 
   - 
   - 

@@ -106,17 +106,19 @@ void Start()
     }
 
     IEnumerator PerformLeftPunch() {
+        punchAnimator.SetBool("isHit1", false);
         isLeftPunchRunning = true;
         punchAnimator.SetBool("isHit", true);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         punchAnimator.SetBool("isHit", false);
         isLeftPunchRunning = false;
     }
 
     IEnumerator PerformRightPunch() {
+        punchAnimator.SetBool("isHit", false);
         isRightPunchRunning = true;
         punchAnimator.SetBool("isHit1", true);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         punchAnimator.SetBool("isHit1", false);
         isRightPunchRunning = false;
     }
