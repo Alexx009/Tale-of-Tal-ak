@@ -19,6 +19,8 @@ public class enemyFollow : MonoBehaviour
     private Transform player;
     private NavMeshAgent agent;
 
+    public bool followPlayer = true;
+
     void Start()
     {
         // Find the player object
@@ -39,14 +41,17 @@ public class enemyFollow : MonoBehaviour
 
     void Update()
     {
+
         // Calculate the distance between the player and this enemy
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= visionDistance)
+        if (distanceToPlayer <= visionDistance && followPlayer)
         {
+            
             // Create a ray from this enemy towards the player
             Ray ray = new Ray(transform.position, player.position - transform.position);
             RaycastHit hit;
+            
 
             // Check if the ray hits the player or an obstacle
             if (Physics.Raycast(ray, out hit, visionDistance))
@@ -58,6 +63,7 @@ public class enemyFollow : MonoBehaviour
                     agent.speed = chaseSpeed;
                     agent.SetDestination(player.position);
                     isPatrolling = false;
+                    
                 }
                 else
                 {

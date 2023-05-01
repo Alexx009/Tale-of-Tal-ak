@@ -15,6 +15,8 @@ public class playerPunch : MonoBehaviour {
 
     public cameraShake cameraShake;
 
+    public enemyFollow enemyFollow;
+
 void Start()
 {
     // Get a reference to the CameraShake script attached to the main camera
@@ -60,13 +62,14 @@ void Start()
                         cameraShake.TriggerShake();
                         // Calculate the knockback direction
                         Vector3 knockbackDirection = (enemy.transform.position - transform.position).normalized;
-
+                        
                         // Apply the knockback force to the enemy's Rigidbody
                         Rigidbody enemyRigidbody = hit.transform.gameObject.GetComponent<Rigidbody>();
                         if (enemyRigidbody != null) {
                             float distance = Vector3.Distance(transform.position, enemy.transform.position);
                             float knockbackForceScaled = kbforce * Mathf.Clamp01(1f - distance / knockbackDistanceThreshold);
                             enemyRigidbody.AddForce(knockbackDirection * knockbackForceScaled, ForceMode.Impulse);
+                            
                         }
                     }
                 }
@@ -109,17 +112,27 @@ void Start()
         punchAnimator.SetBool("isHit1", false);
         isLeftPunchRunning = true;
         punchAnimator.SetBool("isHit", true);
+        enemyFollow.followPlayer = false;
         yield return new WaitForSeconds(0.5f);
         punchAnimator.SetBool("isHit", false);
         isLeftPunchRunning = false;
+        
+        yield return new WaitForSeconds(1f);
+        enemyFollow.followPlayer = true;
+
     }
 
     IEnumerator PerformRightPunch() {
         punchAnimator.SetBool("isHit", false);
         isRightPunchRunning = true;
         punchAnimator.SetBool("isHit1", true);
+        enemyFollow.followPlayer = false;
         yield return new WaitForSeconds(0.5f);
         punchAnimator.SetBool("isHit1", false);
+        
         isRightPunchRunning = false;
+
+        yield return new WaitForSeconds(1f);
+        enemyFollow.followPlayer = true;
     }
 }
