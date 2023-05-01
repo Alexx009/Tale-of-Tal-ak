@@ -19,6 +19,7 @@ public class Settings_Script : MonoBehaviour
 
     public MouseLook mouseLook;
     public PlayerGalaw playerGalaw;
+    public Animator animator;
     
 
 
@@ -129,6 +130,7 @@ public class Settings_Script : MonoBehaviour
     {
         mouseLook.enabled = false;
         playerGalaw.enabled = false;
+        animator.enabled = false;
         isPaused = true;
         Debug.Log("Game paused.");
     }
@@ -136,6 +138,7 @@ public class Settings_Script : MonoBehaviour
     {
         mouseLook.enabled = true;
         playerGalaw.enabled = true;
+        animator.enabled = true;
         isPaused = false;
         Debug.Log("Game resumed.");
     }

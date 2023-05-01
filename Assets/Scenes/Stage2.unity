@@ -10664,6 +10664,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2175151986366780660, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5833
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175151986366780660, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5833
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175151986366780660, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5833
+      objectReference: {fileID: 0}
     - target: {fileID: 7095245029932622355, guid: 126e0780b754e014b9d2272b96d56453,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -10673,6 +10688,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245030817782253, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5415029
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245030817782253, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5415029
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245030817782253, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5415029
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245030900648472, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245030900648472, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245030900648472, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245030900648472, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245030900648473, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1553506008}
+    - target: {fileID: 7095245030900648473, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245030900648473, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7095245030900648477, guid: 126e0780b754e014b9d2272b96d56453,
         type: 3}
@@ -10793,6 +10858,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245031010266890, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.7499
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245031010266890, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.7499
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095245031010266890, guid: 126e0780b754e014b9d2272b96d56453,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.7499
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 126e0780b754e014b9d2272b96d56453, type: 3}
@@ -14466,6 +14546,7 @@ MonoBehaviour:
   musicMixer: {fileID: 0}
   mouseLook: {fileID: 1553506002}
   playerGalaw: {fileID: 1553506004}
+  animator: {fileID: 1022591225}
 --- !u!4 &635129550
 Transform:
   m_ObjectHideFlags: 0
