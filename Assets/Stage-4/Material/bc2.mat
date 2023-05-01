@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: cr3 1
+  m_Name: bc2
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
   - _EMISSION
@@ -25,11 +25,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 69f7d784883b57440968498885177c5b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 784c07a05bdec4142ab48ee933ef2763, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: f209cd746f8e8f3448383b782d97d4de, type: 3}
+        m_Texture: {fileID: 2800000, guid: f6963da734acda94c80f9df7dd536704, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -45,15 +45,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 69f7d784883b57440968498885177c5b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 784c07a05bdec4142ab48ee933ef2763, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 69f7d784883b57440968498885177c5b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 784c07a05bdec4142ab48ee933ef2763, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 14d035bc46427d34a93e12a823055c95, type: 3}
+        m_Texture: {fileID: 2800000, guid: 033f7e9110c5c184c895826ce0a72ae5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -101,7 +101,7 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.432
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -109,12 +109,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
-    - _Color: {r: 0.4150943, g: 0.4150943, b: 0.4150943, a: 1}
-    - _EmissionColor: {r: 0.18114647, g: 0.17418535, b: 0.27353552, a: 1}
+    - _BaseColor: {r: 0.69817215, g: 0.6721698, b: 0.8962264, a: 1}
+    - _Color: {r: 0.69817215, g: 0.6721698, b: 0.8962264, a: 1}
+    - _EmissionColor: {r: 0.31176472, g: 0.31176472, b: 0.31176472, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &562879739377631211
+--- !u!114 &6907469495705933202
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
