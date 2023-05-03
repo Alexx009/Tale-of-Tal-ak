@@ -73,6 +73,7 @@ private List<int> clickedButtons = new List<int>();
                             switch (buttonValue) {
                                 case 0:
                                     jumpPad.GetComponent<Renderer>().material = jumpPadOn;
+                                    
                                     break;
                                 case 2:
                                     jumpPad1.GetComponent<Renderer>().material = jumpPadOn;
@@ -99,7 +100,7 @@ private List<int> clickedButtons = new List<int>();
                                 jumpPad.GetComponent<Renderer>().material = jumpPadOn;
                                 jumpPad1.GetComponent<Renderer>().material = jumpPadOn;
                                 jumpPad2.GetComponent<Renderer>().material = jumpPadOn;
-                                playerGalaw.jumpPadForce = 20f;
+                                playerGalaw.jumpPadForce = 10f;
                             }
                             else
                             {

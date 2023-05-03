@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-
+using TMPro;
 public class Settings_Script : MonoBehaviour
 {
-    public Dropdown dropdown; // Reference to the Dropdown component
-    public Text text; // Reference to the Text component of the Dropdown's Label
+    public TMP_Dropdown dropdown; // Reference to the Dropdown component
+    public TextMeshProUGUI text; // Reference to the Text component of the Dropdown's Label
     
     
     public Toggle fullscreenToggle; // Reference for Toggle
@@ -16,6 +16,11 @@ public class Settings_Script : MonoBehaviour
     public AudioMixer audioMixer;   // Reference for audio
 
     public AudioMixer musicMixer;   // Reference for music
+
+    public MouseLook mouseLook;
+    public PlayerGalaw playerGalaw;
+    public Animator animator;
+    
 
 
     private bool isPaused = false;
@@ -36,16 +41,6 @@ public class Settings_Script : MonoBehaviour
     }
 
 
-     void Update() {
-
-        // ESC TO PAUSE/RESUME
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            togglePause();
-        }
-        
-     }
-
 
 // GET AVAILABLE RESOLUTION ON THE DEVICE
     void getReso()
@@ -63,7 +58,7 @@ public class Settings_Script : MonoBehaviour
         foreach (Resolution resolution in resolutions)
         {
             string optionText = resolution.width + " x " + resolution.height;
-            Dropdown.OptionData option = new Dropdown.OptionData(optionText);
+            TMP_Dropdown.OptionData option = new TMP_Dropdown.OptionData(optionText);
             dropdown.options.Add(option);
 
             // If the resolution matches the current screen resolution, set it as the default selected option
@@ -72,6 +67,7 @@ public class Settings_Script : MonoBehaviour
                 int optionIndex = dropdown.options.Count - 1;
                 dropdown.value = optionIndex;
             }
+
         }
     }
 
@@ -123,7 +119,7 @@ public class Settings_Script : MonoBehaviour
 
 
 // PAUSE
-    void togglePause() {
+    public void togglePause() {
         if (isPaused) {
             ResumeGame();
             
@@ -131,15 +127,19 @@ public class Settings_Script : MonoBehaviour
             Pause();
         }
     }
-    void Pause()
+    public void Pause()
     {
-        Time.timeScale = 0f; // Set time scale to 0 to pause the game
+        mouseLook.enabled = false;
+        playerGalaw.enabled = false;
+        animator.enabled = false;
         isPaused = true;
         Debug.Log("Game paused.");
     }
-    void ResumeGame()
+    public void ResumeGame()
     {
-        Time.timeScale = 1f; // Set time scale back to 1 to resume the game
+        mouseLook.enabled = true;
+        playerGalaw.enabled = true;
+        animator.enabled = true;
         isPaused = false;
         Debug.Log("Game resumed.");
     }
