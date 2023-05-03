@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class inGameSettings : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class inGameSettings : MonoBehaviour
     bool settingsOpen = false;
 
     public RectTransform settingsPanelRect;
+
+    public Settings_Script settings;
+// Get a reference to the Image component
+    public Image bgImage;
+    
 
     private void Start() {
         settingsPanelRect.LeanSetPosX(2000);
@@ -21,16 +27,33 @@ public class inGameSettings : MonoBehaviour
                 settingsClose();
             } else {
                 // Open the settings
-                
-                settingsPanelRect.LeanMoveX(0, 1).setEase(inType);
+                settings.togglePause();
+                settingsPanelRect.LeanMoveX(0, 0.5f).setEase(inType);
                 settingsOpen = true;
+                // Get the current color of the image
+                Color color = bgImage.color;
+
+                // Set the alpha value of the color to 0.5f (50% transparency)
+                color.a = 0.5f;
+
+                // Set the modified color back to the image
+                bgImage.color = color;
             }
         }
     }
 
     public void settingsClose(){
-        settingsPanelRect.LeanMoveX(2000, 1).setEase(inType);
+        settings.togglePause();
+        settingsPanelRect.LeanMoveX(2000, 0.5f).setEase(inType);
         settingsOpen = false;
+        // Get the current color of the image
+        Color color = bgImage.color;
+
+        // Set the alpha value of the color to 0.5f (50% transparency)
+        color.a = 0f;
+
+        // Set the modified color back to the image
+        bgImage.color = color;
     }
 
 }

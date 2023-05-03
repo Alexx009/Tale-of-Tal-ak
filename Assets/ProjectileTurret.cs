@@ -10,7 +10,6 @@ public class ProjectileTurret: MonoBehaviour
     [SerializeField] private Transform spawnPoint; // The position to spawn the projectile from
     [SerializeField] private float projectileForce = 100f; // The force with which to fire the projectile
     [SerializeField] private float fireRate = 1f; // The rate of fire (in seconds)
-     
     private float projectileLifeTime = 5f;
     private void Start()
     {
@@ -31,5 +30,12 @@ public class ProjectileTurret: MonoBehaviour
             // Wait for the specified fire rate before firing the next projectile
             yield return new WaitForSeconds(fireRate);
         }
+    }    
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Destroy the projectile
+        Destroy(collision.gameObject);
+        Debug.Log("destrooyed");
     }
 }
