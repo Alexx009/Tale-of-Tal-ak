@@ -17,6 +17,11 @@ public class Settings_Script : MonoBehaviour
 
     public AudioMixer musicMixer;   // Reference for music
 
+    public MouseLook mouseLook;
+    public PlayerGalaw playerGalaw;
+    public Animator animator;
+    
+
 
     private bool isPaused = false;
     
@@ -35,16 +40,6 @@ public class Settings_Script : MonoBehaviour
 
     }
 
-
-     void Update() {
-
-        // ESC TO PAUSE/RESUME
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            togglePause();
-        }
-        
-     }
 
 
 // GET AVAILABLE RESOLUTION ON THE DEVICE
@@ -123,7 +118,7 @@ public class Settings_Script : MonoBehaviour
 
 
 // PAUSE
-    void togglePause() {
+    public void togglePause() {
         if (isPaused) {
             ResumeGame();
             
@@ -131,15 +126,19 @@ public class Settings_Script : MonoBehaviour
             Pause();
         }
     }
-    void Pause()
+    public void Pause()
     {
-        Time.timeScale = 0f; // Set time scale to 0 to pause the game
+        mouseLook.enabled = false;
+        playerGalaw.enabled = false;
+        animator.enabled = false;
         isPaused = true;
         Debug.Log("Game paused.");
     }
-    void ResumeGame()
+    public void ResumeGame()
     {
-        Time.timeScale = 1f; // Set time scale back to 1 to resume the game
+        mouseLook.enabled = true;
+        playerGalaw.enabled = true;
+        animator.enabled = true;
         isPaused = false;
         Debug.Log("Game resumed.");
     }
