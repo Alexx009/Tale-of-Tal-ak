@@ -23,6 +23,11 @@ TagManager:
   - Enemy
   - lava
   - RespawnPoint
+  - Dolphin
+  - tentacle
+  - octofood
+  - octoFoodLand
+  - tentacleTrigger
   layers:
   - Default
   - TransparentFX
@@ -39,12 +44,12 @@ TagManager:
   - Enemy
   - bridgeButton
   - lava
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - buttoners
+  - pangKey
+  - wallOne
+  - wallTwo
+  - wallThree
+  - hands
   - 
   - 
   - 

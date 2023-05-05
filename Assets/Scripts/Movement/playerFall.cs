@@ -48,6 +48,7 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
                 );
             pause.Pause();
             if(Input.GetKey(KeyCode.R)){
+                Debug.Log("RESPAWN");
                 StartCoroutine(loadingScript.restartLoad());
                 StartCoroutine(RespawnAfterDelay(respawnPoint, 2f));      
             }

@@ -24,7 +24,7 @@ public class button : MonoBehaviour
     public Material jumpPadOff;
 
     public PlayerGalaw playerGalaw;
-
+    
     private void Start()
     {
         HashSet<int> requiredValues = new HashSet<int> { 0, 2, 4 };
@@ -49,12 +49,14 @@ private List<int> clickedButtons = new List<int>();
     {
         if (Input.GetMouseButtonDown(button: 0) && !EventSystem.current.IsPointerOverGameObject())
         {
+            Debug.Log("HIT");
             RaycastHit hit;
             Vector3 centerScreen = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
             Ray ray = mainCamera.ScreenPointToRay(centerScreen);
 
             if (Physics.Raycast(ray, out hit, rayLength, layerMask))
             {
+                Debug.Log("HIT");
                 for (int i = 0; i < buttons.Length; i++)
                 {
                     if (hit.collider.gameObject == buttons[i] && !levelComplete)

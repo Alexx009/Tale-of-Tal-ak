@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using TMPro;
 using System.Collections;
+using System.Linq;
+
 
 public class button1 : MonoBehaviour
 {
@@ -16,6 +18,13 @@ public class button1 : MonoBehaviour
     private Material[] originalMaterials;
     private float buttonZaxis;
     private bool levelComplete = false;
+    public GameObject jumpPad;
+    public GameObject jumpPad1;
+    public GameObject jumpPad2;
+    public Material jumpPadOn;
+    public Material jumpPadOff;
+
+    public PlayerGalaw playerGalaw;
 
     private void Start()
     {
@@ -44,6 +53,7 @@ private List<int> clickedButtons = new List<int>();
 
             if (Physics.Raycast(ray, out hit, rayLength, layerMask))
             {
+                Debug.Log("HIT");
                 for (int i = 0; i < buttons.Length; i++)
                 {
                     if (hit.collider.gameObject == buttons[i] && !levelComplete)
@@ -57,17 +67,39 @@ private List<int> clickedButtons = new List<int>();
                         renderer.material = newButtonMaterial;
 
                         clickedButtons.Add(i);
+                        for (int j = 0; j < clickedButtons.Count; j++) {
+                            int buttonValue = clickedButtons[j];
+                            switch (buttonValue) {
+                                case 0:
+                                    jumpPad.GetComponent<Renderer>().material = jumpPadOn;
+                                    
+                                    break;
+                                case 2:
+                                    jumpPad1.GetComponent<Renderer>().material = jumpPadOn;
+                                    break;
+                                case 4:
+                                    jumpPad2.GetComponent<Renderer>().material = jumpPadOn;
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+
+
                         if (clickedButtons.Count == 4)
                         {
                             ResetButtonState();
                         }
                         else if (clickedButtons.Count == 3)
                         {
-                            if (clickedButtons[0] == 2 && clickedButtons[1] == 5 && clickedButtons[2] == 3)
-                            {
+                            clickedButtons.Sort();
+                            if (Enumerable.SequenceEqual(clickedButtons, new List<int> {0, 2, 4})) {
                                 Debug.Log("you win");
                                 StartCoroutine(levelPassed());
-                                
+                                jumpPad.GetComponent<Renderer>().material = jumpPadOn;
+                                jumpPad1.GetComponent<Renderer>().material = jumpPadOn;
+                                jumpPad2.GetComponent<Renderer>().material = jumpPadOn;
+                                playerGalaw.jumpPadForce = 10f;
                             }
                             else
                             {
@@ -92,6 +124,9 @@ private List<int> clickedButtons = new List<int>();
     IEnumerator ResetButtonState()
     {
         clickedButtons.Clear();
+        jumpPad.GetComponent<Renderer>().material = jumpPadOff;
+        jumpPad1.GetComponent<Renderer>().material = jumpPadOff;
+        jumpPad2.GetComponent<Renderer>().material = jumpPadOff;
         yield return new WaitForSeconds(2);
         foreach (GameObject button in buttons)
         {

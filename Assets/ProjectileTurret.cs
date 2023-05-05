@@ -36,6 +36,5 @@ public class ProjectileTurret: MonoBehaviour
     {
         // Destroy the projectile
         Destroy(collision.gameObject);
-        Debug.Log("destrooyed");
     }
 }
