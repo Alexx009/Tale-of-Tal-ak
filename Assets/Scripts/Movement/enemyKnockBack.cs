@@ -4,9 +4,11 @@ public class enemyKnockBack : MonoBehaviour
 {
     public float kbForce = 10f;
     public float knockbackDistanceThreshold = 5f;
+    public playerHealth playerHealth;
     private float kbTimer = 0f;
     private Vector3 kbDirection;
     private CharacterController characterController;
+    
 
     private void Start()
     {
@@ -31,6 +33,7 @@ public class enemyKnockBack : MonoBehaviour
         // Apply the knockback force to the enemy's CharacterController
         if (characterController != null)
         {
+            playerHealth.DamagePlayer();
             float distance = Vector3.Distance(transform.position, knockbackDirection);
             float knockbackForceScaled = kbForce * Mathf.Clamp01(1f - distance / knockbackDistanceThreshold);
             kbDirection = -knockbackDirection.normalized;

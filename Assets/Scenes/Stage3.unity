@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -809,6 +809,10 @@ PrefabInstance:
       propertyPath: playerHud
       value: 
       objectReference: {fileID: 281887715}
+    - target: {fileID: 1553506027, guid: cbd3e1a25fb4c6548be1f7166e669563, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1680151435}
     - target: {fileID: 7468756747847753521, guid: cbd3e1a25fb4c6548be1f7166e669563,
         type: 3}
       propertyPath: m_RootOrder
@@ -898,7 +902,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 59306014}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 667632879}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c108cc576df10994f9b52e580ec115e5, type: 3}
@@ -2750,7 +2754,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   button: {fileID: 353370394}
-  objectToRotate: {fileID: 0}
+  objectToRotate: {fileID: 667632879}
   buttonOn: {fileID: 2100000, guid: 2c448064cb3ebd84fa8321d247b1e640, type: 2}
   buttonOff: {fileID: 2100000, guid: b6e6c0b491768774db72d1887eb48ce2, type: 2}
   rotateOnValue: -90
@@ -5629,6 +5633,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cde6ba5a87074e8a973d577574f33c1, type: 3}
+--- !u!1 &667632879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7468756748066800985, guid: cbd3e1a25fb4c6548be1f7166e669563,
+    type: 3}
+  m_PrefabInstance: {fileID: 59306014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &673205078
 GameObject:
   m_ObjectHideFlags: 0
@@ -15174,6 +15184,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 250
   knockbackDuration: 0.5
+--- !u!114 &1680151428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1553506027, guid: cbd3e1a25fb4c6548be1f7166e669563,
+    type: 3}
+  m_PrefabInstance: {fileID: 59306014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680151419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70ba4bfb104a6d46957fa7b29a3b454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1680151435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680151419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee245d3ec26396740a11ba7cd2cb0875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1921228156}
+  damageAmount: 10
+  health: 100
+  playerDead: {fileID: 1680151428}
+  dead: {fileID: 0}
 --- !u!1 &1688127005
 GameObject:
   m_ObjectHideFlags: 0
@@ -17017,6 +17056,18 @@ Transform:
   m_Father: {fileID: 255191781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1921228156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4395015780811542992, guid: b6cc63ce9d0139f43ba962bf93d9577d,
+    type: 3}
+  m_PrefabInstance: {fileID: 602987195}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1925244046
 GameObject:
   m_ObjectHideFlags: 0

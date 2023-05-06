@@ -43,6 +43,7 @@ public class PlayerGalaw : MonoBehaviour
 void Update()
 {
     isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+    bool canJump = !Physics2D.Raycast(transform.position, -Vector2.up, 1f, (int)90f, groundMask);
     
     if (isGrounded && velocity.y < 0)
     {
@@ -70,7 +71,7 @@ void Update()
         controller.Move(move * speed * Time.deltaTime);
         
         
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && canJump)
         {
             velocity.y = Mathf.Sqrt(talonTaas * -2 * gravity);
         }

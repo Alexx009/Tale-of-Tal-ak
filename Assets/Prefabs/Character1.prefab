@@ -1165,6 +1165,21 @@ MonoBehaviour:
   pressR: {fileID: 0}
   pause: {fileID: 0}
   playerHud: {fileID: 0}
+--- !u!114 &3768647193642422503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6853189375521578124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee245d3ec26396740a11ba7cd2cb0875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageButton: {fileID: 0}
+  healthBar: {fileID: 0}
+  damageAmount: 10
 --- !u!1 &6853189375839651552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1990834000840785876, guid: 8c1a125dccb98594ea852b9a716a1e48,

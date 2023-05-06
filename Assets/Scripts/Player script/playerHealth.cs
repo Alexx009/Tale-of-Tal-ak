@@ -5,36 +5,39 @@ using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour
 {
-    public Button damageButton;
     public Image healthBar;
     public float damageAmount = 10f;
-
+    public float health = 100f;
+    public playerFall playerDead;
+    public GameObject dead;
     private float currentHealth;
-    
+    private Vector3 ogPos;
 
     void Start()
     {
+        ogPos = dead.transform.position;
         currentHealth = healthBar.fillAmount;
     }
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.P)){
+            health = 0;
+            DamagePlayer();
+        }
+    }
 
-		void Update()
-	{
-		// check if the space key is pressed
-		if (Input.GetKeyDown(KeyCode.J))
-		{
-			DamagePlayer();
-		}
-	}
-
-    void DamagePlayer()
+    public void DamagePlayer()
     {
-        currentHealth -= damageAmount / 100f;
+        currentHealth -= damageAmount / health;
         healthBar.fillAmount = currentHealth;
 
         if (currentHealth <= 0)
         {
-            // Player is dead
-            Debug.Log("Player is dead");
+            health = 100f;
+            healthBar.fillAmount = health;
+            dead.transform.position = transform.position;
         }
+    }
+    public void returnDead(){
+        dead.transform.position  = ogPos;
     }
 }

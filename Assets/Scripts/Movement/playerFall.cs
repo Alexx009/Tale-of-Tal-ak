@@ -12,6 +12,8 @@ public class playerFall : MonoBehaviour
     [SerializeField] private Settings_Script pause;
     [SerializeField] private GameObject playerHud;
 
+    public playerHealth playerHealth;
+
     private void Start()
     {
         // Get the respawn point from PlayerPrefs
@@ -30,11 +32,20 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
 {
     yield return new WaitForSeconds(delay);
     transform.position = respawnPoint;
+    playerHud.SetActive(true);
+    
 }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("lava"))
         {
+            playerDead();
+            
+        }
+    }
+
+    public void playerDead(){
+            Debug.Log("dead");
             playerHud.SetActive(false);
             dead.enabled = true;
             pressR.enabled = true;
@@ -50,12 +61,9 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
             if(Input.GetKey(KeyCode.R)){
                 Debug.Log("RESPAWN");
                 StartCoroutine(loadingScript.restartLoad());
-                StartCoroutine(RespawnAfterDelay(respawnPoint, 2f));      
+                StartCoroutine(RespawnAfterDelay(respawnPoint, 2f));    
+                playerHealth.returnDead();  
             }
-
-            // Respawn the player after a delay of 2 seconds
-            
-        }
     }
 
 }
