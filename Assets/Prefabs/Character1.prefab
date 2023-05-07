@@ -1223,6 +1223,21 @@ MonoBehaviour:
   pause: {fileID: 0}
   dead: {fileID: 0}
   pressR: {fileID: 0}
+--- !u!114 &186452401763066448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6853189375839651552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e783aee473980747815ed86387b887e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 0}
+  loadingSlider: {fileID: 0}
+  pause: {fileID: 0}
 --- !u!4 &6853189375839651565 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1990834000840785881, guid: 8c1a125dccb98594ea852b9a716a1e48,
