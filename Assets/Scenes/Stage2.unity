@@ -49362,6 +49362,11 @@ PrefabInstance:
       objectReference: {fileID: 796548876}
     - target: {fileID: 8936978159202515619, guid: 9b23753e5d067604487c5a3e5e224010,
         type: 3}
+      propertyPath: deadText
+      value: 
+      objectReference: {fileID: 1972669918}
+    - target: {fileID: 8936978159202515619, guid: 9b23753e5d067604487c5a3e5e224010,
+        type: 3}
       propertyPath: transition
       value: 
       objectReference: {fileID: 151124276}
@@ -49395,6 +49400,11 @@ PrefabInstance:
       propertyPath: pressR
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8936978159202515624, guid: 9b23753e5d067604487c5a3e5e224010,
+        type: 3}
+      propertyPath: deadText
+      value: 
+      objectReference: {fileID: 1972669918}
     - target: {fileID: 8936978159202515624, guid: 9b23753e5d067604487c5a3e5e224010,
         type: 3}
       propertyPath: playerHud
