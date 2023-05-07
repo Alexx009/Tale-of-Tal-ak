@@ -7,6 +7,7 @@ public class TentacleSpawn : MonoBehaviour
     public GameObject tentacle;
     private PlayerGalaw playerGalawScript;
     public Animator animators;
+    public GameObject inviWall;
     
     // Start is called before the first frame update
     void Start()
@@ -23,15 +24,19 @@ public class TentacleSpawn : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")){
             tentacle.SetActive(true);
-            animators.Play("Armature|1_Idle_1");
-          //  animators.enabled = false;
+          
+          
+                 animators.Play("Armature|1_Idle_1");
+                 
             StartCoroutine(BriefStopCharac());
         }
     }
     
     private IEnumerator BriefStopCharac(){
+       animators.enabled = false;
+        inviWall.SetActive(false);
         playerGalawScript.enabled = false;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5);
         playerGalawScript.enabled = true;
         animators.enabled = true;
     }
