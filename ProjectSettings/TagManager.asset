@@ -28,6 +28,8 @@ TagManager:
   - octofood
   - octoFoodLand
   - tentacleTrigger
+  - air
+  - airGun
   layers:
   - Default
   - TransparentFX
