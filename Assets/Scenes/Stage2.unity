@@ -48812,6 +48812,12 @@ PrefabInstance:
       objectReference: {fileID: 8936978159202515601}
     - target: {fileID: 1687955249013780026, guid: a9e6a211c881bcf46af6f212689e858a,
         type: 3}
+      propertyPath: musicMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 9906d3a156d3378498df32b2e6b48767,
+        type: 2}
+    - target: {fileID: 1687955249013780026, guid: a9e6a211c881bcf46af6f212689e858a,
+        type: 3}
       propertyPath: playerGalaw
       value: 
       objectReference: {fileID: 1553506004}
