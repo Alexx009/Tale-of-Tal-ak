@@ -31,6 +31,10 @@ TagManager:
   - air
   - airGun
   - barrel
+  - octofooddialogue1
+  - octofooddialogue2
+  - octofooddialogue3
+  - octofooddialogue4
   layers:
   - Default
   - TransparentFX

@@ -112,13 +112,13 @@ void Start()
         punchAnimator.SetBool("isHit1", false);
         isLeftPunchRunning = true;
         punchAnimator.SetBool("isHit", true);
-        enemyFollow.followPlayer = false;
+       // enemyFollow.followPlayer = false;
         yield return new WaitForSeconds(0.5f);
         punchAnimator.SetBool("isHit", false);
         isLeftPunchRunning = false;
         
         yield return new WaitForSeconds(1f);
-        enemyFollow.followPlayer = true;
+       // enemyFollow.followPlayer = true;
 
     }
 
@@ -126,13 +126,13 @@ void Start()
         punchAnimator.SetBool("isHit", false);
         isRightPunchRunning = true;
         punchAnimator.SetBool("isHit1", true);
-        enemyFollow.followPlayer = false;
+        //enemyFollow.followPlayer = false;
         yield return new WaitForSeconds(0.5f);
         punchAnimator.SetBool("isHit1", false);
         
         isRightPunchRunning = false;
 
         yield return new WaitForSeconds(1f);
-        enemyFollow.followPlayer = true;
+        //enemyFollow.followPlayer = true;
     }
 }

@@ -7,6 +7,11 @@ public class TentacleSpawn : MonoBehaviour
     public GameObject tentacle;
     private PlayerGalaw playerGalawScript;
     public Animator animators;
+
+    public GameObject hud1;
+     public GameObject hud2;    
+         public GameObject hud3;
+
     public GameObject inviWall;
     
     // Start is called before the first frame update
@@ -33,6 +38,9 @@ public class TentacleSpawn : MonoBehaviour
     }
     
     private IEnumerator BriefStopCharac(){
+       hud1.SetActive(false);
+           hud2.SetActive(false);
+               hud3.SetActive(false);
        animators.enabled = false;
         inviWall.SetActive(false);
         playerGalawScript.enabled = false;
