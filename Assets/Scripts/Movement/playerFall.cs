@@ -7,25 +7,19 @@ public class playerFall : MonoBehaviour
     private Vector3 respawnPoint;
     public loadingScript loadingScript;
 
-    [SerializeField] private TextMeshProUGUI dead;
-    [SerializeField] private TextMeshProUGUI pressR;
     [SerializeField] private Settings_Script pause;
     [SerializeField] private GameObject playerHud;
-
     public playerHealth playerHealth;
+    public GameObject deadText;
 
     private void Start()
     {
+        
         // Get the respawn point from PlayerPrefs
         respawnPoint = new Vector3(
             PlayerPrefs.GetFloat("RespawnX"),
             PlayerPrefs.GetFloat("RespawnY"),
             PlayerPrefs.GetFloat("RespawnZ"));
-
-        
-        dead.enabled = false;
-        pressR.enabled = false;
-
     }
 
 private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
@@ -45,10 +39,9 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
     }
 
     public void playerDead(){
+            deadText.SetActive(true);
             Debug.Log("dead");
             playerHud.SetActive(false);
-            dead.enabled = true;
-            pressR.enabled = true;
             Debug.Log("respawn");
             Debug.Log("Restarting");
             // Get the respawn point position from PlayerPrefs
@@ -59,10 +52,10 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
                 );
             pause.Pause();
             if(Input.GetKey(KeyCode.R)){
-                Debug.Log("RESPAWN");
                 StartCoroutine(loadingScript.restartLoad());
-                StartCoroutine(RespawnAfterDelay(respawnPoint, 2f));    
-                playerHealth.returnDead();  
+               
+                StartCoroutine(RespawnAfterDelay(respawnPoint, 1.5f)); 
+                 playerHealth.returnDead(); 
             }
     }
 
