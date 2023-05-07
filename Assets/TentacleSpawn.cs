@@ -44,7 +44,7 @@ public class TentacleSpawn : MonoBehaviour
        animators.enabled = false;
         inviWall.SetActive(false);
         playerGalawScript.enabled = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(8);
         playerGalawScript.enabled = true;
         animators.enabled = true;
     }

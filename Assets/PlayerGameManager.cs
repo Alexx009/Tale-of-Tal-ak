@@ -12,6 +12,9 @@ public class PlayerGameManager : MonoBehaviour
  public AudioClip audioClip;
  public AudioSource audio1;
  public AudioSource audio2;
+  public AudioSource audio3;
+   public AudioSource audio4;
+   public AudioSource audioHurt;
  public bool isAudioPlayed1 = true ;
  public bool isAudioPlayed2 = true ;
 
@@ -23,8 +26,12 @@ public class PlayerGameManager : MonoBehaviour
     {
         
         audio1 = GameObject.Find("octofooddialogue1").GetComponent<AudioSource>();
-         audio2 = GameObject.Find("octofooddialogue2").GetComponent<AudioSource>();
-     
+       audio2 = GameObject.Find("octofooddialogue2").GetComponent<AudioSource>();
+      audio3 = GameObject.Find("octofooddialogue3").GetComponent<AudioSource>();
+      audio4 = GameObject.Find("octofooddialogue4").GetComponent<AudioSource>();
+            audioHurt = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
+
+      
         playerCurrentHealth = playerMaxHealth;
     }
 
@@ -65,6 +72,26 @@ PlayerTakeDamage(100f);
        
 
         }
+        if(other.CompareTag("octofooddialogue3")  && audioNumberer == 2){
+        audio3.Play();
+           audioNumberer = 3;
+        //   StartCoroutine("Wait");
+        // isAudioPlayed2 = false;
+       
+
+        }
+         if(other.CompareTag("octofooddialogue4")  && audioNumberer == 3){
+        audio4.Play();
+           audioNumberer = 4;
+        //   StartCoroutine("Wait");
+        // isAudioPlayed2 = false;
+        }
+
+if(other.CompareTag("tentacle")){
+    audioHurt.Play();
+}
+
+        
     }
     
     private IEnumerator Wait1(){
