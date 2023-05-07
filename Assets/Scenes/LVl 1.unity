@@ -5188,11 +5188,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPSplayer: {fileID: 0}
   gameOver: {fileID: 712430431}
-  questHud: {fileID: 0}
   doorCam: {fileID: 167489277}
   mainCam: {fileID: 0}
   crossHair: {fileID: 637103318}
-  questHUD: {fileID: 0}
   defaultHP: 0
 --- !u!4 &878116504 stripped
 Transform:
@@ -6232,8 +6230,8 @@ MonoBehaviour:
   mainMenu: {fileID: 1677111744}
   loadingSlider: {fileID: 0}
   pause: {fileID: 0}
-  transition: {fileID: 0}
-  deadText: {fileID: 0}
+  dead: {fileID: 0}
+  pressR: {fileID: 0}
 --- !u!4 &1079761791
 Transform:
   m_ObjectHideFlags: 0
@@ -9003,7 +9001,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character1 Variant 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7468756747847753523, guid: cbd3e1a25fb4c6548be1f7166e669563, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbd3e1a25fb4c6548be1f7166e669563, type: 3}
 --- !u!1 &1561832908 stripped
 GameObject:

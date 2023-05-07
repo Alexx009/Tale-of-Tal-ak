@@ -8,6 +8,6 @@ public class FallRestart : MonoBehaviour
    public GameObject thePlayer;
    void OnTriggerEnter(Collider other)
    {
-      thePlayer.transform.position = teleportTarget.transform.position;
+    thePlayer.transform.position = teleportTarget.transform.position;
    }
 }

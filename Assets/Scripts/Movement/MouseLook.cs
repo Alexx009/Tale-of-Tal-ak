@@ -5,15 +5,15 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     public float mSens = 100f;
-    bool isCursorVisible = true;
+
     public Transform playerBody;
 
     float xRot = 0f;
-    // void Start()
-    // {
-    //     Cursor.lockState = CursorLockMode.Locked;
-    //     Cursor.visible = false;
-    // }
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     // Update is called once per frame
     void Update()

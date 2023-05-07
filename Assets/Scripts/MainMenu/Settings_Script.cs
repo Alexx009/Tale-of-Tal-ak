@@ -100,14 +100,14 @@ public class Settings_Script : MonoBehaviour
 
 // VOLUME
     public void setAudio (float volume) {
-        audioMixer.SetFloat("Audio", volume);
+        audioMixer.SetFloat("volume", volume);
     }
 
 
 
 // Music
     public void setMusic (float volume) {
-        musicMixer.SetFloat("Music", volume);
+        audioMixer.SetFloat("volume", volume);
     }
 
 
