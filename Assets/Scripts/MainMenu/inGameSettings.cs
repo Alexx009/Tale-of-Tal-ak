@@ -41,10 +41,10 @@ public class inGameSettings : MonoBehaviour
                 settingsPanelRect.LeanMoveX(0, 0.5f).setEase(inType);
                 settingsOpen = true;
                 // Disable the EventSystem to make UI interactable
-                eventSystem.enabled = false;
-                // Lock the cursor when the settings panel is open
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                eventSystem.enabled = true;
+                // Unlock the cursor when the settings panel is open
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 // Get the current color of the image
                 Color color = bgImage.color;
                 // Set the alpha value of the color to 0.5f (50% transparency)
@@ -53,6 +53,7 @@ public class inGameSettings : MonoBehaviour
                 bgImage.color = color;
             }
         }
+
     }
 
     public void settingsClose()
@@ -61,10 +62,10 @@ public class inGameSettings : MonoBehaviour
         settingsPanelRect.LeanMoveX(2000, 0.5f).setEase(inType);
         settingsOpen = false;
         // Enable the EventSystem to make UI interactable
-        eventSystem.enabled = true;
+        eventSystem.enabled = false;
         // Unlock the cursor when the settings panel is closed
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        Cursor.visible = false;
         // Get the current color of the image
         Color color = bgImage.color;
         // Set the alpha value of the color to 0f (fully transparent)

@@ -9,20 +9,15 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
 
     float xRot = 0f;
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+    // void Start()
+    // {
+    //     Cursor.lockState = CursorLockMode.Locked;
+    //     Cursor.visible = false;
+    // }
 
     // Update is called once per frame
     void Update()
     {
-    if (Input.GetKeyDown(KeyCode.Escape)) {
-        isCursorVisible = !isCursorVisible;
-        Cursor.lockState = isCursorVisible ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = isCursorVisible;
-    }
         float mouseX = Input.GetAxis("Mouse X") * mSens * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mSens * Time.deltaTime;
 
