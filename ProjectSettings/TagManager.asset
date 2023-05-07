@@ -30,6 +30,7 @@ TagManager:
   - tentacleTrigger
   - air
   - airGun
+  - barrel
   layers:
   - Default
   - TransparentFX
