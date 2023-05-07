@@ -6,6 +6,24 @@ TagManager:
   tags:
   - death
   - teleport
+<<<<<<< Updated upstream
+=======
+  - MovingPlatform
+  - JumpPadAutomatic
+  - JumpPadAutomatic30
+  - JumpPadAutomatic20
+  - Enemy
+  - lava
+  - RespawnPoint
+  - Dolphin
+  - tentacle
+  - octofood
+  - octoFoodLand
+  - tentacleTrigger
+  - instakill
+  - TutorialPortal
+  - lastTele
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -14,6 +32,7 @@ TagManager:
   - Water
   - UI
   - Interactable
+<<<<<<< Updated upstream
   - 
   - pangPader
   - pangkeylang
@@ -29,6 +48,23 @@ TagManager:
   - 
   - 
   - 
+=======
+  - Button
+  - Wall
+  - Obstacle
+  - WhatIsGround
+  - bridge
+  - Enemy
+  - bridgeButton
+  - lava
+  - buttoners
+  - pangKey
+  - wallOne
+  - wallTwo
+  - wallThree
+  - hands
+  - box
+>>>>>>> Stashed changes
   - 
   - 
   - 

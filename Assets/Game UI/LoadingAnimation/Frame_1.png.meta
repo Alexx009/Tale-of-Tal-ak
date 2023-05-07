@@ -7,7 +7,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -53,7 +53,11 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
+<<<<<<< Updated upstream:Assets/Game UI/LoadingAnimation/Frame_1.png.meta
   textureType: 8
+=======
+  textureType: 1
+>>>>>>> Stashed changes:Assets/SharedAssets/Assets/Prefabs/Character_prefab/Tal-ak Hand FPS/Hero_Hand_lp_Material_Normal.png.meta
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
