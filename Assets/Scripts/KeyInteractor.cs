@@ -9,6 +9,7 @@ public class KeyInteractor : MonoBehaviour
     public Transform cam;
     bool active = false;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     bool actives = false;
    
 =======
@@ -16,6 +17,12 @@ public class KeyInteractor : MonoBehaviour
     bool activesb = false;
     bool activesc = false;
 
+>>>>>>> Stashed changes
+=======
+    bool activesa = false;
+      bool activesb = false;
+        bool activesc = false;
+    [SerializeField] GameObject cameron;
 >>>>>>> Stashed changes
     [SerializeField] PlayerGalaw playerGalawan;
     [SerializeField] GameObject palawOne;
@@ -215,24 +222,40 @@ public class KeyInteractor : MonoBehaviour
     IEnumerator SecondWallCoroutine()
     {
         playerGalawan.enabled = false;
+<<<<<<< Updated upstream
         mainCamera.SetActive(false);
+=======
+        cameron.SetActive(false);
+>>>>>>> Stashed changes
         secondwallpointer.SetActive(true);
         yield return new WaitForSeconds(2f);
         acquiredKey = 2;
         secondwallpointer.SetActive(false);
+<<<<<<< Updated upstream
         mainCamera.SetActive(true);
+=======
+        cameron.SetActive(true);
+>>>>>>> Stashed changes
         playerGalawan.enabled = true;
 
     }
     IEnumerator ThirdWallCoroutine()
     {
         playerGalawan.enabled = false;
+<<<<<<< Updated upstream
         mainCamera.SetActive(false);
+=======
+        cameron.SetActive(false);
+>>>>>>> Stashed changes
         thirdWallPointer.SetActive(true);
         yield return new WaitForSeconds(2f);
         acquiredKey = 3;
         thirdWallPointer.SetActive(false);
+<<<<<<< Updated upstream
         mainCamera.SetActive(true);
+=======
+        cameron.SetActive(true);
+>>>>>>> Stashed changes
         playerGalawan.enabled = true;
 
     }
