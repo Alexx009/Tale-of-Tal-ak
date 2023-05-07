@@ -252,7 +252,6 @@ GameObject:
   - component: {fileID: 4395015780555633768}
   - component: {fileID: 4395015780555633771}
   - component: {fileID: 4395015780555633775}
-  - component: {fileID: 4395015780555633772}
   m_Layer: 5
   m_Name: playerHUD
   m_TagString: Untagged
@@ -366,21 +365,6 @@ MonoBehaviour:
   questImage: {fileID: 4395015782325495043}
   newImageSprite: {fileID: 2800000, guid: 5621b7df46324454688f38ace9da011d, type: 3}
   oldImageSprite: {fileID: 2800000, guid: 301fe5e618fa7c8459dfa336d51f3540, type: 3}
---- !u!114 &4395015780555633772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4395015780555633770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee245d3ec26396740a11ba7cd2cb0875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageButton: {fileID: 0}
-  healthBar: {fileID: 4395015780811542992}
-  damageAmount: 10
 --- !u!1 &4395015780700103418
 GameObject:
   m_ObjectHideFlags: 0

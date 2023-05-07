@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: RIG-Armature|Idle_1 (1)
-      takeName: RIG-Armature|Idle_1
+      name: RIG-Armature|attack_1-smash
+      takeName: RIG-Armature|attack_1-smash
       internalID: -4708475373341613639
       firstFrame: 0
-      lastFrame: 239
+      lastFrame: 349
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
