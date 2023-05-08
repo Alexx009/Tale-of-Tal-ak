@@ -9,9 +9,11 @@ public class GameReloader : MonoBehaviour
     MouseLook cameraGalaws;
     [SerializeField] GameObject FPSplayer;
     [SerializeField] GameObject gameOver;
+    [SerializeField] GameObject questHud;
     [SerializeField] GameObject doorCam;
     [SerializeField] GameObject mainCam;
     [SerializeField] GameObject crossHair;
+    [SerializeField] GameObject questHUD;
     public float defaultHP;
     void Awake()
     {
@@ -24,10 +26,14 @@ public class GameReloader : MonoBehaviour
         StartCoroutine(Kurotins());
         playerGalaw.enabled = false;
         gameOver.SetActive(false);
+        questHud.SetActive(true);
         doorCam.SetActive(true);
         cameraGalaws.enabled = false;
         mainCam.SetActive(false);
         crossHair.SetActive(false);
+
+
+
     }
 
     // Update is called once per frame
@@ -44,7 +50,7 @@ public class GameReloader : MonoBehaviour
     }
     IEnumerator Coroutins()
     {
-   
+        questHUD.SetActive(false);
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

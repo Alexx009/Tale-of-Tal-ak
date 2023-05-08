@@ -140,6 +140,4 @@ private List<int> clickedButtons = new List<int>();
             renderer.material = originalMaterials[System.Array.IndexOf(buttons, button)];
         }
     }
-
-    
 }
