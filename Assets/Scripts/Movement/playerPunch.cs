@@ -129,7 +129,9 @@ void Start()
         //enemyFollow.followPlayer = false;
         yield return new WaitForSeconds(0.5f);
         punchAnimator.SetBool("isHit1", false);
+        
         isRightPunchRunning = false;
+
         yield return new WaitForSeconds(1f);
         //enemyFollow.followPlayer = true;
     }
