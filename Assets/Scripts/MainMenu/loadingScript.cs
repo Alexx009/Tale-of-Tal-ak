@@ -24,6 +24,11 @@ public class loadingScript : MonoBehaviour
         deadText.SetActive(false);
     }
     public IEnumerator restartLoad(){
+<<<<<<< Updated upstream
+=======
+          deadText.SetActive(false);
+        pause.ResumeGame();
+>>>>>>> Stashed changes
         loadingScreen.SetActive(true);
         transition.SetActive(true);
         deadText.SetActive(false);

@@ -23,10 +23,21 @@ public class playerFall : MonoBehaviour
     }
 
 private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
+<<<<<<< Updated upstream
 {
+=======
+{  deadText.SetActive(false);
+>>>>>>> Stashed changes
     yield return new WaitForSeconds(delay);
+     
+       deadText.SetActive(false);
     transform.position = respawnPoint;
     playerHud.SetActive(true);
+<<<<<<< Updated upstream
+=======
+    
+    pause.ResumeGame();
+>>>>>>> Stashed changes
     
 }
     private void OnTriggerStay(Collider other)
@@ -53,9 +64,16 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
             pause.Pause();
             if(Input.GetKey(KeyCode.R)){
                 StartCoroutine(loadingScript.restartLoad());
+<<<<<<< Updated upstream
                
                 StartCoroutine(RespawnAfterDelay(respawnPoint, 1.5f)); 
                  playerHealth.returnDead(); 
+=======
+                StartCoroutine(RespawnAfterDelay(respawnPoint, 1f)); 
+                
+                
+                playerHealth.returnDead(); 
+>>>>>>> Stashed changes
             }
     }
 
