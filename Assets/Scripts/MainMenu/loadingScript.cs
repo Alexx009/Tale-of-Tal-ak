@@ -22,7 +22,6 @@ public class loadingScript : MonoBehaviour
 
 
     private void Start() {
-        transition.SetActive(false);
     }
     public IEnumerator restartLoad(){
         pause.ResumeGame();
