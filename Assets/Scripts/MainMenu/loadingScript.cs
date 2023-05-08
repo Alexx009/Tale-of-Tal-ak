@@ -15,18 +15,26 @@ public class loadingScript : MonoBehaviour
     [SerializeField] private Settings_Script pause;
     [SerializeField] private TextMeshProUGUI dead;
     [SerializeField] private TextMeshProUGUI pressR;
+    [SerializeField] private GameObject transition;
+
 
 
     private void Start() {
-
+        transition.SetActive(false);
     }
+
     public IEnumerator restartLoad(){
-        loadingScreen.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        loadingScreen.SetActive(value: false);
+        pause.ResumeGame();
         dead.enabled = false;
         pressR.enabled = false;
-        pause.ResumeGame();
+        loadingScreen.SetActive(true);
+        transition.SetActive(true);
+        yield return new WaitForSeconds(1.2f);
+        loadingScreen.SetActive(value: false);
+        yield return new WaitForSeconds(2.2f);
+        transition.SetActive(false);
+        
+        
 
         Debug.Log("loading");
         
