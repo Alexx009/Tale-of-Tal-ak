@@ -24,9 +24,12 @@ public class playerFall : MonoBehaviour
 
 private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
 {
+    
     yield return new WaitForSeconds(delay);
     transform.position = respawnPoint;
     playerHud.SetActive(true);
+    deadText.SetActive(false);
+    pause.ResumeGame();
     
 }
     private void OnTriggerStay(Collider other)
@@ -42,8 +45,6 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
             deadText.SetActive(true);
             Debug.Log("dead");
             playerHud.SetActive(false);
-            Debug.Log("respawn");
-            Debug.Log("Restarting");
             // Get the respawn point position from PlayerPrefs
             Vector3 respawnPoint = new Vector3(
                 PlayerPrefs.GetFloat("RespawnX"),
@@ -52,11 +53,12 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
                 );
             pause.Pause();
             if(Input.GetKey(KeyCode.R)){
-                deadText.SetActive(false);
+                
+                Debug.Log("Resume");
                 StartCoroutine(loadingScript.restartLoad());
-               
-                StartCoroutine(RespawnAfterDelay(respawnPoint, 1.5f)); 
-                 playerHealth.returnDead(); 
+                StartCoroutine(RespawnAfterDelay(respawnPoint, 1f)); 
+                
+                playerHealth.returnDead(); 
             }
     }
 

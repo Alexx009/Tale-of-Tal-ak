@@ -13,4 +13,5 @@ public class NextSceneLoader : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneName);
         }
+    }
 }

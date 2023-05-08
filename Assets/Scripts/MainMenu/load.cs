@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 using System;
 using TMPro;
 
-public class loadingScript : MonoBehaviour
+public class load : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject mainMenu;
     
     [SerializeField] private Slider loadingSlider;
     [SerializeField] private Settings_Script pause;
+    [SerializeField] private TextMeshProUGUI dead;
+    [SerializeField] private TextMeshProUGUI pressR;
     [SerializeField] private GameObject transition;
-    [SerializeField] private GameObject deadText;
-    
 
 
 
@@ -25,13 +25,18 @@ public class loadingScript : MonoBehaviour
 
     public IEnumerator restartLoad(){
         pause.ResumeGame();
-        deadText.SetActive(false);
+        dead.enabled = false;
+        pressR.enabled = false;
         loadingScreen.SetActive(true);
-        transition.SetActive(true);
+        
         yield return new WaitForSeconds(1.2f);
         loadingScreen.SetActive(value: false);
+        transition.SetActive(true);
         yield return new WaitForSeconds(2.2f);
         transition.SetActive(false);
+        
+        
+
         Debug.Log("loading");
         
 

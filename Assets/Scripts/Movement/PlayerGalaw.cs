@@ -9,7 +9,6 @@ public class PlayerGalaw : MonoBehaviour
     private bool isOnPlatform = false;
     private Vector3 lastPlatformPosition;
     public CharacterController controller;
-
     public float speed = 12f;
     public float gravity = -9.8f;
     public float talonTaas = 2f;
