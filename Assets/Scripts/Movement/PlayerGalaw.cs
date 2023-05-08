@@ -5,7 +5,12 @@ using UnityEngine;
 
 
 public class PlayerGalaw : MonoBehaviour
-{  private GameObject movingPlatform;
+{  
+    public AudioSource audioSource;
+    public AudioSource audioSource1;
+    public AudioClip jumpSfx;
+    public AudioClip runningSfx;
+    private GameObject movingPlatform;
     private bool isOnPlatform = false;
     private Vector3 lastPlatformPosition;
     public CharacterController controller;
@@ -26,6 +31,7 @@ public class PlayerGalaw : MonoBehaviour
     public LayerMask groundMask;
     private float x;
     private float z;
+    private bool isPlayingAudio = false;
 
     public new Animator animation;
     public bool playAnimation = true;
@@ -49,7 +55,7 @@ void Update()
         grounded = 1;
         velocity.y = -2f;
         useTime = 0; // Reset the double jump counter
-        
+
         bool isMoving = (x != 0 || z != 0);
         // Update the animation parameter based on whether the character is moving or not
         animation.SetBool("isRun", !isMoving);
@@ -72,12 +78,38 @@ void Update()
         
         if (Input.GetButtonDown("Jump") && isGrounded && canJump)
         {
+            // Only play the jump sound effect if it is not already playing
+            if (!isPlayingAudio)
+            {
+                audioSource.PlayOneShot(jumpSfx);
+                isPlayingAudio = true;
+                Invoke("StopAudio", jumpSfx.length); // Stop the audio after it has finished playing
+            }
             velocity.y = Mathf.Sqrt(talonTaas * -2 * gravity);
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            speed = 30f;
+
+        if (Input.GetButton("Horizontal")){
+            if (!isPlayingAudio)
+            {
+                audioSource1.PlayOneShot(runningSfx);
+                isPlayingAudio = true;
+                Invoke("StopAudio", runningSfx.length); // Stop the audio after it has finished playing
+            }
         }
+        if (Input.GetButton("Vertical")){
+            if (!isPlayingAudio)
+            {
+                audioSource1.PlayOneShot(runningSfx);
+                isPlayingAudio = true;
+                Invoke("StopAudio", runningSfx.length); // Stop the audio after it has finished playing
+            }
+        }
+
+
+        // if (Input.GetKeyDown(KeyCode.LeftShift))
+        // {
+        //     speed = 30f;
+        // }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -87,21 +119,25 @@ void Update()
         switch(hit.gameObject.tag)
         {
             case "JumpPad":
+                audioSource.PlayOneShot(jumpSfx);
                 gravity = -13f;
                 velocity.y = Mathf.Sqrt(jumpPadForce * -2 * gravity);
                 useTime++;
                 break;
             case "JumpPadAutomatic":
+                audioSource.PlayOneShot(jumpSfx);
                 gravity = -13f;
                 velocity.y = Mathf.Sqrt(40f * -2 * gravity);
                 useTime++;
                 break;
             case "JumpPadAutomatic30":
+                audioSource.PlayOneShot(jumpSfx);
                 gravity = -13f;
                 velocity.y = Mathf.Sqrt(30f * -2 * gravity);
                 useTime++;
                 break;
             case "JumpPadAutomatic20":
+                audioSource.PlayOneShot(jumpSfx);
                 gravity = -13f;
                 velocity.y = Mathf.Sqrt(20f * -2 * gravity);
                 useTime++;
@@ -111,5 +147,11 @@ void Update()
                 talonTaas = 2f;
                 break;
         }
+    }
+
+    private void StopAudio()
+    {
+        // Reset the flag to allow the audio clip to be played again
+        isPlayingAudio = false;
     }
 }

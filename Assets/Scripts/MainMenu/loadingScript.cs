@@ -15,6 +15,8 @@ public class loadingScript : MonoBehaviour
     [SerializeField] private Settings_Script pause;
     [SerializeField] private GameObject transition;
     [SerializeField] private GameObject deadText;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip transitionSfx;
     
 
 
@@ -22,12 +24,12 @@ public class loadingScript : MonoBehaviour
     private void Start() {
         transition.SetActive(false);
     }
-
     public IEnumerator restartLoad(){
         pause.ResumeGame();
         deadText.SetActive(false);
         loadingScreen.SetActive(true);
         transition.SetActive(true);
+        audioSource.PlayOneShot(transitionSfx);
         yield return new WaitForSeconds(1.2f);
         loadingScreen.SetActive(value: false);
         yield return new WaitForSeconds(2.2f);

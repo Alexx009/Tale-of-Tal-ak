@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class KeyInteractor : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip wallSfx;
     public Transform cam;
     bool active = false;
     bool activesa = false;
@@ -130,6 +132,7 @@ public class KeyInteractor : MonoBehaviour
             pressE.SetActive(true);
             if (pressE.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
+                audioSource.PlayOneShot(wallSfx);
                 lvlComplete.text = "Level 1: Complete";
                 questText.text = "Finding Palaw\r\n\r\nLevel 2: Find the second key to open right wall\r\n";
                 StartCoroutine(WallOneCoro());
@@ -143,6 +146,7 @@ public class KeyInteractor : MonoBehaviour
             pressE.SetActive(true);
             if (pressE.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
+                audioSource.PlayOneShot(wallSfx);
                 lvlComplete.text = "Level 2: Complete";
                 questText.text = "Finding Palaw\r\n\r\nLevel 3: Find the third key to open the whole map\r\n";
                 StartCoroutine(WallTwoCoro());
@@ -156,6 +160,7 @@ public class KeyInteractor : MonoBehaviour
             pressE.SetActive(true);
             if (pressE.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
+                audioSource.PlayOneShot(wallSfx);
                 lvlComplete.text = "Level 3: Complete";
                 questText.text = "Finding Palaw\r\n\r\nLevel 4: Find Palaw in the Map to proceed\r\n";
                 StartCoroutine(WallThreeCoro());

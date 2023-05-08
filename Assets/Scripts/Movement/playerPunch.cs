@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 
 public class playerPunch : MonoBehaviour {
+
+    public AudioSource audioSource;
+    public AudioClip punchSfx;
     public Animator punchAnimator;
     public KeyCode leftPunchKey = KeyCode.Mouse0;
     public KeyCode rightPunchKey = KeyCode.Mouse1;
@@ -48,7 +51,7 @@ void Start()
 
         if (Input.GetKeyDown(leftPunchKey) && !isLeftPunchRunning) {
             StartCoroutine(PerformLeftPunch());
-
+            audioSource.PlayOneShot(punchSfx);
             RaycastHit hit;
             Vector3 centerScreen = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
             Ray ray = mainCamera.ScreenPointToRay(centerScreen);
@@ -78,7 +81,7 @@ void Start()
 
         if (Input.GetKeyDown(rightPunchKey) && !isRightPunchRunning) {
             StartCoroutine(PerformRightPunch());
-
+            audioSource.PlayOneShot(punchSfx);
             RaycastHit hit;
             Vector3 centerScreen = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
             Ray ray = mainCamera.ScreenPointToRay(centerScreen);

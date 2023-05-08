@@ -3,36 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
 using TMPro;
+using UnityEngine.Video;
 
 
 public class loadingVideo : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;
+    [SerializeField] private GameObject playerHud;
     [SerializeField] private Slider loadingSlider;
+    public VideoClip[] videoClips;
 
+    public string levelToLoad;
 
+    public VideoPlayer videoPlayer;
 
-    private void Update() {
+    public void Start()
+    {
+        loadingScreen.SetActive(false);
+        PlayRandomVideoClip();
+    }
+    public void Update() {
         if(Input.GetKeyDown(KeyCode.O)){
-            loadLevelBtn("Stage3");
+            StartCoroutine(LoadLevelASync(levelToLoad));
         }
     }
-    public void loadLevelBtn(string levelToLoad) {
-        loadingScreen.SetActive(true);
-        StartCoroutine(LoadLevelASync(levelToLoad));
-    }
 
-    IEnumerator LoadLevelASync(string levelToLoad){
-        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
-
-        while (!loadOperation.isDone)
-        {
-            yield return new WaitForSeconds(5f);
-            float progressValue = Mathf.Clamp01(loadOperation.progress / 0.9f);
-            loadingSlider.value = progressValue;
-            yield return null;
-        }
+    public void PlayRandomVideoClip()
+    {
+        int randomIndex = Random.Range(0, videoClips.Length);
+        videoPlayer.clip = videoClips[randomIndex];
+        videoPlayer.Play();
     }
+IEnumerator LoadLevelASync(string levelToLoad){
+    playerHud.SetActive(false);
+    videoPlayer.enabled = true;
+    loadingScreen.SetActive(true);
+    
+    yield return new WaitForSeconds(Random.Range(5f,10f));
+    SceneManager.LoadSceneAsync(levelToLoad);
+    
+}
+
 }

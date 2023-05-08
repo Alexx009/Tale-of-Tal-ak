@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     public Image healthBar;
     public float damageAmount = 10f;
     public float health = 100f;
@@ -29,7 +31,7 @@ public class playerHealth : MonoBehaviour
     {
         currentHealth -= damageAmount / health;
         healthBar.fillAmount = currentHealth;
-
+        audioSource.PlayOneShot(audioClip);
         if (currentHealth <= 0)
         {
             health = 100f;
