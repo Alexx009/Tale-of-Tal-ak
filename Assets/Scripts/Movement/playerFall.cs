@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 public class playerFall : MonoBehaviour
 {
     private Vector3 respawnPoint;
@@ -11,6 +12,8 @@ public class playerFall : MonoBehaviour
     [SerializeField] private GameObject playerHud;
     public playerHealth playerHealth;
     public GameObject deadText;
+
+    public string sceneToReLoad;
 
     private void Start()
     {
@@ -54,11 +57,13 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
             pause.Pause();
             if(Input.GetKey(KeyCode.R)){
                 
-                Debug.Log("Resume");
-                StartCoroutine(loadingScript.restartLoad());
-                StartCoroutine(RespawnAfterDelay(respawnPoint, 1f)); 
-                
-                playerHealth.returnDead(); 
+                 SceneManager.LoadSceneAsync(sceneToReLoad);
+                // Debug.Log("Resume");
+                // StartCoroutine(loadingScript.restartLoad());
+                // StartCoroutine(RespawnAfterDelay(respawnPoint, 1f)); 
+                // deadText.SetActive(false);
+                // playerHealth.returnDead(); 
+
             }
     }
 

@@ -22,7 +22,7 @@ public class TutorialScript : MonoBehaviour
     public Material unpressed;
     public Material pressed;
     public Transform cam;
-    public float maxDistance = 10f; // Maximum distance the raycast can travel
+    public float maxDistance = 1f; // Maximum distance the raycast can travel
     public LayerMask box;
     bool teleporterism = false;
     public GameObject lastTeleport;
@@ -117,11 +117,6 @@ public class TutorialScript : MonoBehaviour
         {
             StartCoroutine(BackTele());
         }
-        if (other.gameObject.tag == "lastTele")
-        {
-
-            StartCoroutine(LastTele());
-        }
     }
     IEnumerator PlayerTele()
     {
@@ -150,10 +145,6 @@ public class TutorialScript : MonoBehaviour
         yield return new WaitForSeconds(4f);
         playerController.enabled = true;
     }
-    IEnumerator LastTele()
-    {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+
 }
    

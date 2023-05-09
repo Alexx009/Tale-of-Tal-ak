@@ -18,11 +18,6 @@ public class loadingScript : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip transitionSfx;
     
-
-
-
-    private void Start() {
-    }
     public IEnumerator restartLoad(){
         pause.ResumeGame();
         deadText.SetActive(false);

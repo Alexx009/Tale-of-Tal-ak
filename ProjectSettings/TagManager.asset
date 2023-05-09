@@ -32,6 +32,13 @@ TagManager:
   - airGun
   - barrel
   - jellyfish
+  - octofooddialogue1
+  - octofooddialogue3
+  - octofooddialogue2
+  - octofooddialogue4
+  - TutorialPortal
+  - lastTele
+  - instakill
   layers:
   - Default
   - TransparentFX
@@ -54,7 +61,7 @@ TagManager:
   - wallTwo
   - wallThree
   - hands
-  - 
+  - box
   - 
   - 
   - 

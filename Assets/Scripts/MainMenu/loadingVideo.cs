@@ -20,20 +20,22 @@ public class loadingVideo : MonoBehaviour
 
     public void Start()
     {
-        loadingScreen.SetActive(false);
+        loadingScreen.SetActive(true);
+        StartCoroutine(loadLevel());
+        
         PlayRandomVideoClip();
     }
     void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject.CompareTag("teleport"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(LoadLevelASync(levelToLoad));
+            playerHud.SetActive(false);
+            videoPlayer.enabled = true;
+            loadingScreen.SetActive(true);
+            StartCoroutine(LoadLevelASync());
+            AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
+    
         }
-    }
-    public void Update() {
-        // if(Input.GetKeyDown(KeyCode.O)){
-        //    StartCoroutine(LoadLevelASync(levelToLoad));
-       // }
     }
 
     public void PlayRandomVideoClip()
@@ -42,14 +44,20 @@ public class loadingVideo : MonoBehaviour
         videoPlayer.clip = videoClips[randomIndex];
         videoPlayer.Play();
     }
-IEnumerator LoadLevelASync(string levelToLoad){
-    playerHud.SetActive(false);
-    videoPlayer.enabled = true;
-    loadingScreen.SetActive(true);
+public IEnumerator LoadLevelASync(){
+
+
     
+    Debug.Log("LEVEL NEXT");   
     yield return new WaitForSeconds(Random.Range(5f,10f));
-    SceneManager.LoadSceneAsync(levelToLoad);
+     
+     
     
 }
-
+public IEnumerator loadLevel(){
+   
+    Debug.Log("LEVEL load");   
+    yield return new WaitForSeconds(5f);  
+    loadingScreen.SetActive(false);
+}
 }

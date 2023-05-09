@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 36508415}
   - component: {fileID: 36508414}
   - component: {fileID: 36508413}
+  - component: {fileID: 36508416}
   m_Layer: 0
   m_Name: Cube
   m_TagString: teleport
@@ -933,7 +934,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36508411}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -976,6 +977,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36508411}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &36508416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36508411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e783aee473980747815ed86387b887e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 351420235}
+  playerHud: {fileID: 189170409}
+  loadingSlider: {fileID: 1673633448}
+  videoClips:
+  - {fileID: 32900000, guid: e3dc14447ef6c0844a3cebdfa3bbbb91, type: 3}
+  - {fileID: 32900000, guid: 77748bf47c7342246a4819228e05c737, type: 3}
+  - {fileID: 32900000, guid: 9a74de03e52282e4c9238217135caab1, type: 3}
+  - {fileID: 32900000, guid: 6bafe4c32ebc7c142bebfc4626fbcb70, type: 3}
+  - {fileID: 32900000, guid: 2bbbb0feeeb01d0449b94fc7895954db, type: 3}
+  - {fileID: 32900000, guid: b2e3f0fd88ce4684abd4b6eaaca90491, type: 3}
+  - {fileID: 32900000, guid: 4324e2f0697ecb944a2b15534dfb2d8f, type: 3}
+  - {fileID: 32900000, guid: 3227d13daa269b242b72e96605322595, type: 3}
+  levelToLoad: Stage3
+  videoPlayer: {fileID: 1681839293}
 --- !u!1 &38269485
 GameObject:
   m_ObjectHideFlags: 0
@@ -6401,10 +6428,9 @@ GameObject:
   - component: {fileID: 223728491}
   - component: {fileID: 223728490}
   - component: {fileID: 223728489}
-  - component: {fileID: 223728492}
   m_Layer: 0
   m_Name: jumpPAd
-  m_TagString: JumpPadAutomatic30
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6436,8 +6462,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0.74, z: 0}
 --- !u!23 &223728490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6488,22 +6514,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223728487}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!208 &223728492
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223728487}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1001 &228126193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18046,6 +18056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633654246}
   - component: {fileID: 633654247}
+  - component: {fileID: 633654248}
   m_Layer: 0
   m_Name: JELLYFISHy (1)
   m_TagString: jellyfish
@@ -18090,6 +18101,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &633654248
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633654245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!114 &635129549 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1687955249013780026, guid: a9e6a211c881bcf46af6f212689e858a,
@@ -18475,6 +18500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664585512}
   - component: {fileID: 664585513}
+  - component: {fileID: 664585514}
   m_Layer: 0
   m_Name: JELLYFISHy (2)
   m_TagString: jellyfish
@@ -18519,6 +18545,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &664585514
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664585511}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &665814921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21432,6 +21472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 763647369}
   - component: {fileID: 763647370}
+  - component: {fileID: 763647371}
   m_Layer: 0
   m_Name: JELLYFISHy (7)
   m_TagString: jellyfish
@@ -21476,6 +21517,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &763647371
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763647368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &771929505
 GameObject:
   m_ObjectHideFlags: 0
@@ -22969,6 +23024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 818201648}
   - component: {fileID: 818201649}
+  - component: {fileID: 818201650}
   m_Layer: 0
   m_Name: JELLYFISHy (2)
   m_TagString: jellyfish
@@ -23013,6 +23069,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &818201650
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818201647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &821960047
 GameObject:
   m_ObjectHideFlags: 0
@@ -32746,7 +32816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209291259}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.9}
+  m_LocalPosition: {x: 0, y: 0, z: 4.6}
   m_LocalScale: {x: 5, y: 0.4505, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38161,6 +38231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1352249979}
   - component: {fileID: 1352249980}
+  - component: {fileID: 1352249981}
   m_Layer: 0
   m_Name: JELLYFISHy (8)
   m_TagString: jellyfish
@@ -38205,6 +38276,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &1352249981
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352249978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1352544224
 GameObject:
   m_ObjectHideFlags: 0
@@ -38848,6 +38933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371630187}
   - component: {fileID: 1371630188}
+  - component: {fileID: 1371630189}
   m_Layer: 0
   m_Name: JELLYFISHy (6)
   m_TagString: jellyfish
@@ -38892,6 +38978,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &1371630189
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371630186}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1372917258
 GameObject:
   m_ObjectHideFlags: 0
@@ -39250,7 +39350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1376074286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43132,7 +43232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1502694190
 Transform:
   m_ObjectHideFlags: 0
@@ -44022,8 +44122,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543913812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -545, y: 0, z: 305}
-  m_LocalScale: {x: 550.05005, y: 1, z: 1455.1}
+  m_LocalPosition: {x: -545, y: 0, z: 367}
+  m_LocalScale: {x: 550.05005, y: 10, z: 1455.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1034432305}
@@ -49393,12 +49493,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710265374}
   m_Mesh: {fileID: -5495902117074765545, guid: 942edcb4aaeb7b144bb9a91fa82b307b, type: 3}
---- !u!1 &1712422132 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6853189375839651552, guid: 9b23753e5d067604487c5a3e5e224010,
-    type: 3}
-  m_PrefabInstance: {fileID: 4952754065720059898}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1715012914
 GameObject:
   m_ObjectHideFlags: 0
@@ -50107,6 +50201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1744229487}
   - component: {fileID: 1744229488}
+  - component: {fileID: 1744229489}
   m_Layer: 0
   m_Name: JELLYFISHy (4)
   m_TagString: jellyfish
@@ -50151,6 +50246,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &1744229489
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744229486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1753960184
 GameObject:
   m_ObjectHideFlags: 0
@@ -52838,7 +52947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847328179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6, y: -24.3, z: 97.5}
+  m_LocalPosition: {x: -1.6, y: -27.7, z: 97.5}
   m_LocalScale: {x: 5, y: 0.4505, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54882,6 +54991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1916278379}
   - component: {fileID: 1916278380}
+  - component: {fileID: 1916278381}
   m_Layer: 0
   m_Name: JELLYFISHy (3)
   m_TagString: jellyfish
@@ -54926,6 +55036,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &1916278381
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916278378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1918481739
 GameObject:
   m_ObjectHideFlags: 0
@@ -56622,6 +56746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1976710879}
   - component: {fileID: 1976710880}
+  - component: {fileID: 1976710881}
   m_Layer: 0
   m_Name: JELLYFISHy (5)
   m_TagString: jellyfish
@@ -56666,6 +56791,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &1976710881
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976710878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1983415552
 GameObject:
   m_ObjectHideFlags: 0
@@ -58426,9 +58565,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2059115200}
   - component: {fileID: 2059115201}
+  - component: {fileID: 2059115202}
+  - component: {fileID: 2059115203}
   m_Layer: 0
   m_Name: heabody
-  m_TagString: Untagged
+  m_TagString: JumpPadAutomatic30
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58528,6 +58669,35 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00005346909, y: 0.029571487, z: 0.0003656596}
     m_Extent: {x: 0.026527103, y: 0.02525006, z: 0.02364812}
   m_DirtyAABB: 0
+--- !u!65 &2059115202
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059115199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1354113, y: 0.17434385, z: 0.18615402}
+  m_Center: {x: 0.0015741981, y: -0.0017722935, z: -0.019188136}
+--- !u!208 &2059115203
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059115199}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.06770565, y: 0.08717195, z: 0.093077}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.001574198, y: -0.001772293, z: -0.01918814}
+  m_TimeToStationary: 0.5
 --- !u!1 &2060128930
 GameObject:
   m_ObjectHideFlags: 0
@@ -62146,6 +62316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2023100909052820299}
   - component: {fileID: 2023100909052820300}
+  - component: {fileID: 2023100909052820301}
   m_Layer: 0
   m_Name: JELLYFISHy
   m_TagString: jellyfish
@@ -63328,6 +63499,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!64 &2023100909052820301
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682287022702371313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!4 &2070528983816749067
 Transform:
   m_ObjectHideFlags: 0
@@ -63632,16 +63817,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3639304787327571073, guid: 555ac5c514580be4e90ee809d43029e3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3639304787327571079, guid: 555ac5c514580be4e90ee809d43029e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3639304787384495896, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
       propertyPath: m_Pivot.x
@@ -63747,20 +63922,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3639304787384495899, guid: 555ac5c514580be4e90ee809d43029e3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3639304787384495903, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
       propertyPath: m_Name
       value: loadingVideo
-      objectReference: {fileID: 0}
-    - target: {fileID: 3639304787384495903, guid: 555ac5c514580be4e90ee809d43029e3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3639304788990499751, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
@@ -64111,17 +64276,17 @@ PrefabInstance:
     - target: {fileID: 6853189375521578120, guid: 9b23753e5d067604487c5a3e5e224010,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.4
+      value: 12.42
       objectReference: {fileID: 0}
     - target: {fileID: 6853189375521578120, guid: 9b23753e5d067604487c5a3e5e224010,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.42
+      value: 36.01
       objectReference: {fileID: 0}
     - target: {fileID: 6853189375521578120, guid: 9b23753e5d067604487c5a3e5e224010,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 257
+      value: 253.52
       objectReference: {fileID: 0}
     - target: {fileID: 6853189375521578120, guid: 9b23753e5d067604487c5a3e5e224010,
         type: 3}
@@ -64257,7 +64422,7 @@ PrefabInstance:
         type: 3}
       propertyPath: deadText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1687955249511506168}
     - target: {fileID: 8936978159202515619, guid: 9b23753e5d067604487c5a3e5e224010,
         type: 3}
       propertyPath: transition
@@ -64323,6 +64488,11 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 8936978159202515641}
+    - target: {fileID: 8936978159202515624, guid: 9b23753e5d067604487c5a3e5e224010,
+        type: 3}
+      propertyPath: sceneToReLoad
+      value: Stage2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 186452401763066448, guid: 9b23753e5d067604487c5a3e5e224010, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b23753e5d067604487c5a3e5e224010, type: 3}
@@ -65992,38 +66162,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4952754065720059898}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712422132}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c108cc576df10994f9b52e580ec115e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8936978159202515609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712422132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e783aee473980747815ed86387b887e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 351420235}
-  playerHud: {fileID: 189170409}
-  loadingSlider: {fileID: 1673633448}
-  videoClips:
-  - {fileID: 32900000, guid: e3dc14447ef6c0844a3cebdfa3bbbb91, type: 3}
-  - {fileID: 32900000, guid: 77748bf47c7342246a4819228e05c737, type: 3}
-  - {fileID: 32900000, guid: 9a74de03e52282e4c9238217135caab1, type: 3}
-  - {fileID: 32900000, guid: 6bafe4c32ebc7c142bebfc4626fbcb70, type: 3}
-  - {fileID: 32900000, guid: 2bbbb0feeeb01d0449b94fc7895954db, type: 3}
-  - {fileID: 32900000, guid: b2e3f0fd88ce4684abd4b6eaaca90491, type: 3}
-  - {fileID: 32900000, guid: 4324e2f0697ecb944a2b15534dfb2d8f, type: 3}
-  - {fileID: 32900000, guid: 3227d13daa269b242b72e96605322595, type: 3}
-  levelToLoad: Stage3
-  videoPlayer: {fileID: 1681839293}
 --- !u!114 &8936978159202515622 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8936978159202515622, guid: 9b23753e5d067604487c5a3e5e224010,
