@@ -23,10 +23,17 @@ public class loadingVideo : MonoBehaviour
         loadingScreen.SetActive(false);
         PlayRandomVideoClip();
     }
-    public void Update() {
-        if(Input.GetKeyDown(KeyCode.O)){
+    void OnTriggerEnter (Collider other)
+    {
+        if (other.gameObject.CompareTag("teleport"))
+        {
             StartCoroutine(LoadLevelASync(levelToLoad));
         }
+    }
+    public void Update() {
+        // if(Input.GetKeyDown(KeyCode.O)){
+        //    StartCoroutine(LoadLevelASync(levelToLoad));
+       // }
     }
 
     public void PlayRandomVideoClip()

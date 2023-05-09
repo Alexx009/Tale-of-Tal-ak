@@ -107,7 +107,7 @@ public class Settings_Script : MonoBehaviour
 
 // Music
     public void setMusic (float volume) {
-        audioMixer.SetFloat("volume", volume);
+        musicMixer.SetFloat("volume", volume);
     }
 
 

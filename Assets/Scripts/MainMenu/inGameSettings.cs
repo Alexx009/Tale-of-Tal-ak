@@ -22,6 +22,7 @@ public class inGameSettings : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
+            Cursor.lockState = CursorLockMode.None;
             if (settingsOpen) {
                 // Close the settings
                 settingsClose();
@@ -46,6 +47,7 @@ public class inGameSettings : MonoBehaviour
         settings.togglePause();
         settingsPanelRect.LeanMoveX(2000, 0.5f).setEase(inType);
         settingsOpen = false;
+        Cursor.lockState = CursorLockMode.Locked;
         // Get the current color of the image
         Color color = bgImage.color;
 

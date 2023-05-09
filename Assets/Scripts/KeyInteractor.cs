@@ -11,8 +11,8 @@ public class KeyInteractor : MonoBehaviour
     public Transform cam;
     bool active = false;
     bool activesa = false;
-      bool activesb = false;
-        bool activesc = false;
+    bool activesb = false;
+    bool activesc = false;
    
     [SerializeField] PlayerGalaw playerGalawan;
     [SerializeField] GameObject palawOne;
@@ -34,7 +34,8 @@ public class KeyInteractor : MonoBehaviour
     [SerializeField] GameObject thirdWallPointer;
     [SerializeField] GameObject pressE;
     [SerializeField] GameObject questTitle;
-     Animator questTitleAnimator;
+    [SerializeField] GameObject cameron;
+    Animator questTitleAnimator;
     public int acquiredKey = 0;
     public TMP_Text questText;
     public TMP_Text lvlComplete;
@@ -48,7 +49,9 @@ public class KeyInteractor : MonoBehaviour
         firstWall.SetActive(true);
         wallAnimator = wallAnimator.GetComponent<Animator>();
         questTitleAnimator = questTitle.GetComponent<Animator>();
-        StartCoroutine(QuestTitleCoro());
+        questTitle.SetActive(false);
+       StartCoroutine(QuestTitleCoro());
+
         
     }
 
@@ -183,6 +186,7 @@ public class KeyInteractor : MonoBehaviour
     IEnumerator WallOneCoro()
     {
         questTitle.SetActive(true);
+        
         questTitleAnimator.SetInteger("Animator", 1);
         yield return new WaitForSeconds(6f);
         questTitleAnimator.SetInteger("Animator", 0);
@@ -192,20 +196,24 @@ public class KeyInteractor : MonoBehaviour
     IEnumerator SecondWallCoroutine()
     {
         playerGalawan.enabled = false;
+        cameron.SetActive(false);
         secondwallpointer.SetActive(true);
         yield return new WaitForSeconds(2f);
         acquiredKey = 2;
         secondwallpointer.SetActive(false);
+        cameron.SetActive(true);
         playerGalawan.enabled = true;
 
     }
     IEnumerator ThirdWallCoroutine()
     {
         playerGalawan.enabled = false;
+        cameron.SetActive(false);
         thirdWallPointer.SetActive(true);
         yield return new WaitForSeconds(2f);
         acquiredKey = 3;
         thirdWallPointer.SetActive(false);
+        cameron.SetActive(true);
         playerGalawan.enabled = true;
 
     }
@@ -216,11 +224,9 @@ public class KeyInteractor : MonoBehaviour
     }
     IEnumerator QuestTitleCoro()
     {
-        questTitleAnimator.SetInteger("Animator", 1);
-        yield return new WaitForSeconds(6f);
-        questTitleAnimator.SetInteger("Animator", 0);
-        questTitle.SetActive(false);
-    }
+      yield return new WaitForSeconds(6f);
+       questTitle.SetActive(false);
+   }
    IEnumerator WallTwoCoro()
     {
         questTitle.SetActive(true);
