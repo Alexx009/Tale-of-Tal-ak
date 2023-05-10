@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -313,6 +313,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 06716b2dbcd23d6439ee4945ea99295a,
     type: 3}
   m_PrefabInstance: {fileID: 146983608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &195390275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 328771025259483664, guid: 555ac5c514580be4e90ee809d43029e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2044616602}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &216723157 stripped
 GameObject:
@@ -17882,7 +17888,9 @@ MonoBehaviour:
   - {fileID: 32900000, guid: b2e3f0fd88ce4684abd4b6eaaca90491, type: 3}
   - {fileID: 32900000, guid: 4324e2f0697ecb944a2b15534dfb2d8f, type: 3}
   - {fileID: 32900000, guid: 3227d13daa269b242b72e96605322595, type: 3}
-  levelToLoad: Stage2
+  transition: {fileID: 195390275}
+  loadingOff: {fileID: 559957379}
+  levelToLoad: Lvl 1
   videoPlayer: {fileID: 342028607}
 --- !u!1 &1523732727
 GameObject:
@@ -19607,7 +19615,6 @@ MonoBehaviour:
     m_Bits: 2097152
   lastTeleport: {fileID: 322196869}
   lastCollider: {fileID: 1496078785}
-  LoadingVideo: {fileID: 0}
 --- !u!143 &1907416153 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 6853189375521578121, guid: 9b23753e5d067604487c5a3e5e224010,

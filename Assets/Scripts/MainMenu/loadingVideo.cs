@@ -22,8 +22,8 @@ public class loadingVideo : MonoBehaviour
     public void Start()
     {
         transition.SetActive(false); 
-        loadingScreen.SetActive(true);
-        StartCoroutine(loadLevel());
+        // loadingScreen.SetActive(true);
+        // StartCoroutine(loadLevel());
         
         PlayRandomVideoClip();
     }
@@ -32,10 +32,8 @@ public class loadingVideo : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerHud.SetActive(false);
-            videoPlayer.enabled = true;
-            loadingScreen.SetActive(true);
-            StartCoroutine(LoadLevelASync());
-            AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
+            StartCoroutine(LoadNextScene());
+            // AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
     
         }
     }
