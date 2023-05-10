@@ -1251,6 +1251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3862992f9fea2fc4e91a87cb57bbaa75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  punchSfx: {fileID: 0}
   punchAnimator: {fileID: 1022591225}
   leftPunchKey: 323
   rightPunchKey: 324
@@ -1277,6 +1279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kbForce: 30
   knockbackDistanceThreshold: 15
+  playerHealth: {fileID: 0}
 --- !u!114 &1553506027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1289,11 +1292,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70ba4bfb104a6d46957fa7b29a3b454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScript: {fileID: 1553506016}
-  dead: {fileID: 0}
-  pressR: {fileID: 0}
+  loadingScript: {fileID: 0}
   pause: {fileID: 0}
   playerHud: {fileID: 0}
+  playerHealth: {fileID: 0}
+  deadText: {fileID: 0}
+  sceneToReLoad: 
 --- !u!4 &7468756748066800980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1990834000840785881, guid: 8c1a125dccb98594ea852b9a716a1e48,
@@ -1342,21 +1346,3 @@ MonoBehaviour:
   shakeMagnitude: 0.15
   dampingSpeed: 2
   initialPosition: {x: 0, y: 0, z: 0}
---- !u!114 &1553506016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7468756748066800985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd6c6a5c906a23441a042f00d7d68698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 0}
-  mainMenu: {fileID: 0}
-  loadingSlider: {fileID: 0}
-  pause: {fileID: 0}
-  dead: {fileID: 0}
-  pressR: {fileID: 0}

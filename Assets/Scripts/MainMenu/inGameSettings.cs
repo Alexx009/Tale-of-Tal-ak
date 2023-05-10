@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class inGameSettings : MonoBehaviour
 {
@@ -57,5 +58,4 @@ public class inGameSettings : MonoBehaviour
         // Set the modified color back to the image
         bgImage.color = color;
     }
-
 }

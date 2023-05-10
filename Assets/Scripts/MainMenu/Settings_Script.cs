@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class Settings_Script : MonoBehaviour
 {
     public TMP_Dropdown dropdown; // Reference to the Dropdown component
     public TextMeshProUGUI text; // Reference to the Text component of the Dropdown's Label
     
-    
+    public MouseLook Msens;
     public Toggle fullscreenToggle; // Reference for Toggle
 
 
@@ -109,7 +110,10 @@ public class Settings_Script : MonoBehaviour
     public void setMusic (float volume) {
         musicMixer.SetFloat("volume", volume);
     }
-
+// Mouse sensitivity
+    public void setMsens (float sens) {
+        Msens.mSens = sens;
+    }
 
 // QUALITY
     public void setQuality (int qualityIndex) {
@@ -142,5 +146,12 @@ public class Settings_Script : MonoBehaviour
         animator.enabled = true;
         isPaused = false;
         Debug.Log("Game resumed.");
+    }
+
+    public void restartScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void backToMainMenu(){
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync("mainMenu");
     }
 }
