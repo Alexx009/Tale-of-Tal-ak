@@ -5873,7 +5873,7 @@ PrefabInstance:
     - target: {fileID: 1553506027, guid: cbd3e1a25fb4c6548be1f7166e669563, type: 3}
       propertyPath: pause
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 788249600}
     - target: {fileID: 1553506027, guid: cbd3e1a25fb4c6548be1f7166e669563, type: 3}
       propertyPath: player
       value: 
@@ -5891,6 +5891,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 281887715}
     - target: {fileID: 1553506027, guid: cbd3e1a25fb4c6548be1f7166e669563, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 1609803266}
+    - target: {fileID: 1553506027, guid: cbd3e1a25fb4c6548be1f7166e669563, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1680151452}
@@ -5898,6 +5902,10 @@ PrefabInstance:
       propertyPath: sceneToReLoad
       value: Stage3
       objectReference: {fileID: 0}
+    - target: {fileID: 1553506027, guid: cbd3e1a25fb4c6548be1f7166e669563, type: 3}
+      propertyPath: transitionObject
+      value: 
+      objectReference: {fileID: 158871235}
     - target: {fileID: 7468756747847753518, guid: cbd3e1a25fb4c6548be1f7166e669563,
         type: 3}
       propertyPath: jumpSfx
@@ -23816,6 +23824,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788125029}
   m_Mesh: {fileID: -5495902117074765545, guid: 942edcb4aaeb7b144bb9a91fa82b307b, type: 3}
+--- !u!114 &788249600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1230824737, guid: 0c04787e99139c542a8b5635993dd981,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141284007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25437ac09db4ed5419001b3570aebe57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &792826280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: bdbc679c093899640b9096bd45787a7b,
@@ -41766,6 +41786,7 @@ MonoBehaviour:
   transition: {fileID: 1641983394}
   loadingOff: {fileID: 158871235}
   levelToLoad: mainMenu
+  levelToReload: 
   videoPlayer: {fileID: 1641983392}
 --- !u!1001 &1617704158
 PrefabInstance:
@@ -42246,27 +42267,27 @@ PrefabInstance:
     - target: {fileID: 3639304787384495896, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3639304787384495896, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3639304787384495896, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3639304787384495896, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -306
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3639304787384495896, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -172
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3639304787384495896, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
@@ -42283,6 +42304,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3639304787384495899, guid: 555ac5c514580be4e90ee809d43029e3,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3639304787384495903, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
       propertyPath: m_Name
@@ -42291,7 +42317,7 @@ PrefabInstance:
     - target: {fileID: 3639304787384495903, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3639304788990499751, guid: 555ac5c514580be4e90ee809d43029e3,
         type: 3}
@@ -42878,8 +42904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee245d3ec26396740a11ba7cd2cb0875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  audioSource: {fileID: 2036786930}
+  audioClip: {fileID: 8300000, guid: e7d01fd7743b8a74dad0645a2bed846c, type: 3}
   healthBar: {fileID: 1026196117}
   damageAmount: 10
   health: 100
@@ -48379,6 +48405,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 62753fa5c4076df4ca0b21ba9ffee80e,
     type: 3}
   m_PrefabInstance: {fileID: 2033476992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2036786930 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7806107474496694954, guid: 7a4817398e852f047914dc1b70ef98fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1405138377}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2043560607
 GameObject:

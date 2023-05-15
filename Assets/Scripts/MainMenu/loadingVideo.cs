@@ -16,6 +16,7 @@ public class loadingVideo : MonoBehaviour
     public GameObject transition;
     public GameObject loadingOff;
     public string levelToLoad;
+    public string levelToReload;
 
     public VideoPlayer videoPlayer;
 
@@ -95,13 +96,26 @@ public void buttonNextLvL(){
 }
 public IEnumerator loadLevel(){
    
-    Debug.Log("LEVEL load");   
+    loadingOff.SetActive(true);
+
+    loadingScreen.SetActive(true);
+    
     yield return new WaitForSeconds(2f); 
-    transition.SetActive(true);
-    yield return new WaitForSeconds(1f); 
-    loadingScreen.SetActive(false); 
-    yield return new WaitForSeconds(2f); 
-    transition.SetActive(false);
-    loadingOff.SetActive(false);
+
+    
+    
+    // Load the new scene additively
+    AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToReload, LoadSceneMode.Additive);
+
+    // Wait for the new scene to finish loading
+    while (!asyncLoad.isDone) {
+        transition.SetActive(true);
+        yield return new WaitForSeconds(1.5f); 
+        // Unload the previous scene
+        AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        yield return new WaitUntil(() => asyncUnload.isDone);
+        yield return null;
+
+    }
 }
 }

@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class playerFall : MonoBehaviour
 {
     private Vector3 respawnPoint;
-    public loadingScript loadingScript;
+    public loadingVideo transition;
+    public GameObject transitionObject;
 
     [SerializeField] private Settings_Script pause;
     [SerializeField] private GameObject playerHud;
@@ -17,7 +18,7 @@ public class playerFall : MonoBehaviour
 
     private void Start()
     {
-        
+        StartCoroutine(waitings());
         // Get the respawn point from PlayerPrefs
         respawnPoint = new Vector3(
             PlayerPrefs.GetFloat("RespawnX"),
@@ -25,6 +26,10 @@ public class playerFall : MonoBehaviour
             PlayerPrefs.GetFloat("RespawnZ"));
     }
 
+IEnumerator waitings(){
+    yield return new WaitForSeconds(2f);
+    transitionObject.SetActive(false);
+}
 private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
 {
     
@@ -39,12 +44,12 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
     {
         if (other.CompareTag("lava"))
         {
-            playerDead();
+            StartCoroutine(playerDead());
             
         }
     }
 
-    public void playerDead(){
+    public IEnumerator playerDead(){
             deadText.SetActive(true);
             Debug.Log("dead");
             playerHud.SetActive(false);
@@ -57,7 +62,9 @@ private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
             pause.Pause();
             if(Input.GetKey(KeyCode.R)){
                 
-                 SceneManager.LoadSceneAsync(sceneToReLoad);
+                transitionObject.SetActive(true);
+                yield return new WaitForSeconds(2f);
+                SceneManager.LoadSceneAsync(sceneToReLoad);
                 // Debug.Log("Resume");
                 // StartCoroutine(loadingScript.restartLoad());
                 // StartCoroutine(RespawnAfterDelay(respawnPoint, 1f)); 
