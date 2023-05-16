@@ -22,6 +22,7 @@ public class bridgeMove : MonoBehaviour
 
     private bool buttonState = false;
     public string objectId;
+    public Animator leverAnim;
 
     private void Update()
     {
@@ -35,12 +36,14 @@ public class bridgeMove : MonoBehaviour
             {
                 if (hit.transform.gameObject == button && hit.transform.gameObject.name == objectId)
                 {
+                    
                     buttonState = !buttonState;
 
                     button.GetComponent<Renderer>().material = buttonState ? buttonOn : buttonOff;
 
                     if (buttonState)
                     {
+                        leverAnim.SetBool("lever", true);
                         Debug.Log("true");
                         LeanTween.rotateY(objectToRotate, rotateOnValue, rotationTime).setEase(rotationEaseType);
                         LeanTween.rotateZ(objectToRotate, rotateOnValueZ, rotationTime).setEase(rotationEaseType);
@@ -49,6 +52,7 @@ public class bridgeMove : MonoBehaviour
                     }
                     else
                     {
+                        leverAnim.SetBool("lever", false);
                         Debug.Log("False");
                         LeanTween.rotateY(objectToRotate, rotateOffValue, rotationTime).setEase(rotationEaseType);
                         LeanTween.rotateZ(objectToRotate, rotateOffValueZ, rotationTime).setEase(rotationEaseType);
