@@ -92,7 +92,7 @@ public class Settings_Script : MonoBehaviour
 
 
 // FULLSCREEN
-    void OnFullScreen()
+    public void OnFullScreen()
     {
         // Set the full screen state based on the toggle's value
         Screen.fullScreen = fullscreenToggle.isOn;

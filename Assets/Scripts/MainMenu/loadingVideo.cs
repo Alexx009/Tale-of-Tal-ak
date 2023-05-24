@@ -63,7 +63,6 @@ public IEnumerator LoadNextScene()
         yield return new WaitForSeconds(1.5f); 
         // Unload the previous scene
         AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        yield return new WaitUntil(() => asyncUnload.isDone);
         yield return null;
 
     }
