@@ -6,7 +6,7 @@ public class bridgeMove : MonoBehaviour
 {
     public Camera mainCamera;
     public float rayLength;
-    public LayerMask layerMask;
+    public LayerMask bridgeButton;
     public GameObject button;
     public GameObject objectToRotate;
 
@@ -32,7 +32,7 @@ public class bridgeMove : MonoBehaviour
             Vector3 centerScreen = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
             Ray ray = mainCamera.ScreenPointToRay(centerScreen);
 
-            if (Physics.Raycast(ray, out hit, rayLength, layerMask))
+            if (Physics.Raycast(ray, out hit, rayLength, bridgeButton))
             {
                 if (hit.transform.gameObject == button && hit.transform.gameObject.name == objectId)
                 {
