@@ -8,7 +8,7 @@ public class inGameSettings : MonoBehaviour
 {
 
     public LeanTweenType inType;
-    bool settingsOpen = true;
+    bool settingsOpen = false;
 
     public RectTransform settingsPanelRect;
 
@@ -16,63 +16,53 @@ public class inGameSettings : MonoBehaviour
     // Get a reference to the Image component
     public Image bgImage;
 
+
     private void Start()
     {
-        settingsPanelRect.LeanMoveX(2000, 0.01f).setEase(inType);
+        settingsPanelRect.LeanSetPosX(2000);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
+            Cursor.lockState = CursorLockMode.None;
             if (settingsOpen)
             {
-                StartCoroutine(SettingsOpen());
+                // Close the settings
+                settingsClose();
             }
-            else if (!settingsOpen)
+            else
             {
-                StartCoroutine(settingsClose());
+                // Open the settings
+                settings.togglePause();
+                settingsPanelRect.LeanMoveX(0, 0.5f).setEase(inType);
+                settingsOpen = true;
+                // Get the current color of the image
+                Color color = bgImage.color;
+
+                // Set the alpha value of the color to 0.5f (50% transparency)
+                color.a = 0.5f;
+
+                // Set the modified color back to the image
+                bgImage.color = color;
             }
         }
     }
 
-    IEnumerator SettingsOpen()
-    {
-
-        Cursor.visible = true;
-        // Open the settings
-        settings.togglePause();
-        settingsPanelRect.LeanMoveX(0, 0.5f).setEase(inType);
-
-        // Get the current color of the image
-        Color color = bgImage.color;
-
-        // Set the alpha value of the color to 0.5f (50% transparency)
-        color.a = 0.5f;
-
-        // Set the modified color back to the image
-        bgImage.color = color;
-
-        yield return new WaitUntil(() => settingsPanelRect.anchoredPosition.x == 0);
-        settingsOpen = false;
-    }
-
-    public IEnumerator settingsClose()
+    public void settingsClose()
     {
         settings.togglePause();
         settingsPanelRect.LeanMoveX(2000, 0.5f).setEase(inType);
-
-        Cursor.visible = false;
+        settingsOpen = false;
+        Cursor.lockState = CursorLockMode.Locked;
         // Get the current color of the image
         Color color = bgImage.color;
+
         // Set the alpha value of the color to 0.5f (50% transparency)
         color.a = 0f;
 
         // Set the modified color back to the image
         bgImage.color = color;
-
-        yield return new WaitUntil(() => settingsPanelRect.anchoredPosition.x == 800);
-        settingsOpen = true;
     }
 }
