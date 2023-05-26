@@ -30,7 +30,7 @@ public class inGameSettings : MonoBehaviour
             {
                 StartCoroutine(SettingsOpen());
             }
-            else if (!settingsOpen)
+            if (!settingsOpen)
             {
                 StartCoroutine(settingsClose());
             }
@@ -40,7 +40,7 @@ public class inGameSettings : MonoBehaviour
     IEnumerator SettingsOpen()
     {
 
-        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         // Open the settings
         settings.togglePause();
         settingsPanelRect.LeanMoveX(0, 0.5f).setEase(inType);
@@ -63,7 +63,6 @@ public class inGameSettings : MonoBehaviour
         settings.togglePause();
         settingsPanelRect.LeanMoveX(2000, 0.5f).setEase(inType);
 
-        Cursor.visible = false;
         // Get the current color of the image
         Color color = bgImage.color;
         // Set the alpha value of the color to 0.5f (50% transparency)
@@ -72,7 +71,8 @@ public class inGameSettings : MonoBehaviour
         // Set the modified color back to the image
         bgImage.color = color;
 
-        yield return new WaitUntil(() => settingsPanelRect.anchoredPosition.x == 800);
+        yield return new WaitUntil(() => settingsPanelRect.anchoredPosition.x == 2000);
+        Cursor.lockState = CursorLockMode.Locked;
         settingsOpen = true;
     }
 }
