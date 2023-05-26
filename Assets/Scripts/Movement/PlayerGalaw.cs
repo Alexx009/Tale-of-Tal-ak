@@ -10,19 +10,13 @@ public class PlayerGalaw : MonoBehaviour
     public AudioSource audioSource1;
     public AudioClip jumpSfx;
     public AudioClip runningSfx;
-    private GameObject movingPlatform;
-    private bool isOnPlatform = false;
-    private Vector3 lastPlatformPosition;
     public CharacterController controller;
     public float speed = 12f;
     public float gravity = -9.8f;
     public float talonTaas = 2f;
     public float defaultHP = 100f;
-    public float timer = 3;
-    public float seconds = 1;
     public int useTime = 0;
     public int grounded = 0;
-    public GameObject enemy;
     Vector3 velocity;
     bool isGrounded;
     public Transform groundCheck;
@@ -34,7 +28,6 @@ public class PlayerGalaw : MonoBehaviour
     private bool isPlayingAudio = false;
 
     public new Animator animation;
-    public bool playAnimation = true;
 
     public void OnTriggerEnter(Collider other)
     {

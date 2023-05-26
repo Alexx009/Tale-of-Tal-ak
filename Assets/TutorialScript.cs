@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class TutorialScript : MonoBehaviour
 {
     public PlayerGalaw player;
-    public MouseLook camera;
+    public MouseLook cameraLook;
     public GameObject tutorialTitle;
     public CharacterController playerController;
     public TMP_Text title;
@@ -24,9 +24,8 @@ public class TutorialScript : MonoBehaviour
     public Transform cam;
     public float maxDistance = 1f; // Maximum distance the raycast can travel
     public LayerMask box;
-    bool teleporterism = false;
+    // private bool teleporterism = false;
     public GameObject lastTeleport;
-    public GameObject lastCollider;
 
 
 
@@ -35,7 +34,7 @@ public class TutorialScript : MonoBehaviour
     {
         playerController = playerController.GetComponent<CharacterController>();
         player = player.GetComponent<PlayerGalaw>();
-        camera = camera.GetComponent<MouseLook>();
+        cameraLook = cameraLook.GetComponent<MouseLook>();
         lastTeleport.SetActive(false);
 
 
@@ -43,7 +42,7 @@ public class TutorialScript : MonoBehaviour
     void Start()
     {
         player.enabled = false;
-        camera.enabled = false;
+        cameraLook.enabled = false;
         keysUI.SetActive(false);
         tutorialTitle.SetActive(true);
         StartCoroutine(Coroutines());
@@ -64,7 +63,7 @@ public class TutorialScript : MonoBehaviour
         if (Physics.Raycast(ray, out hit, maxDistance, box) && Input.GetMouseButtonDown(0))
         {
           objectToPress.GetComponent<Renderer>().material = pressed;
-            teleporterism = true;
+            // teleporterism = true;
             lastTeleport.SetActive(true);
             Debug.Log("Hit " + hit.transform.name);
         }
@@ -85,7 +84,7 @@ public class TutorialScript : MonoBehaviour
     IEnumerator Coroutines()
     {
         yield return new WaitForSeconds(4f);
-        camera.enabled = true;
+        cameraLook.enabled = true;
         tutorialTitle.SetActive(false);
         StartCoroutine(TextCoro());
     }
@@ -121,18 +120,18 @@ public class TutorialScript : MonoBehaviour
     IEnumerator PlayerTele()
     {
         playerController.enabled = false;
-        camera.enabled = false;
+        cameraLook.enabled = false;
         yield return new WaitForSeconds(1f);
-        camera.enabled = true;
+        cameraLook.enabled = true;
         playerChar.transform.position = playerDestination.position;
         playerController.enabled=true;
     }
     IEnumerator BackTele()
     {
         playerController.enabled = false;
-        camera.enabled = false;
+        cameraLook.enabled = false;
         yield return new WaitForSeconds(1f);
-        camera.enabled = true;
+        cameraLook.enabled = true;
         playerChar.transform.position = backPortal.position;
         playerController.enabled = true;
         StartCoroutine(LastTripCoro());
