@@ -10,15 +10,16 @@ public class loadingScript : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject mainMenu;
-    
+
     [SerializeField] private Slider loadingSlider;
     [SerializeField] private Settings_Script pause;
     [SerializeField] private GameObject transition;
     [SerializeField] private GameObject deadText;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip transitionSfx;
-    
-    public IEnumerator restartLoad(){
+
+    public IEnumerator restartLoad()
+    {
         pause.ResumeGame();
         deadText.SetActive(false);
         loadingScreen.SetActive(true);
@@ -29,16 +30,18 @@ public class loadingScript : MonoBehaviour
         yield return new WaitForSeconds(2.2f);
         transition.SetActive(false);
         Debug.Log("loading");
-        
+
 
     }
-    public void loadLevelBtn(string levelToLoad) {
+    public void loadLevelBtn(string levelToLoad)
+    {
         mainMenu.SetActive(false);
         loadingScreen.SetActive(true);
         StartCoroutine(LoadLevelASync(levelToLoad));
     }
 
-    IEnumerator LoadLevelASync(string levelToLoad){
+    IEnumerator LoadLevelASync(string levelToLoad)
+    {
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
 
         while (!loadOperation.isDone)
@@ -49,5 +52,5 @@ public class loadingScript : MonoBehaviour
         }
     }
 
-    
+
 }
