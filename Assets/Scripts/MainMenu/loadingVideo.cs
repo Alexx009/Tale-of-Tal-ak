@@ -46,11 +46,7 @@ public IEnumerator LoadNextScene()
 
     loadingScreen.SetActive(true);
 
-
-    // Wait for the player to press Enter before switching to the next scene
-    yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
-    
-    yield return new WaitForSeconds(2f); 
+    yield return new WaitForSeconds(5f); 
 
     
     

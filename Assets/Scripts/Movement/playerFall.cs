@@ -26,52 +26,56 @@ public class playerFall : MonoBehaviour
             PlayerPrefs.GetFloat("RespawnZ"));
     }
 
-IEnumerator waitings(){
-    yield return new WaitForSeconds(2f);
-    transitionObject.SetActive(false);
-}
-private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
-{
-    
-    yield return new WaitForSeconds(delay);
-    transform.position = respawnPoint;
-    playerHud.SetActive(true);
-    deadText.SetActive(false);
-    pause.ResumeGame();
-    
-}
+    IEnumerator waitings()
+    {
+        yield return new WaitForSeconds(2f);
+        transitionObject.SetActive(false);
+    }
+    private IEnumerator RespawnAfterDelay(Vector3 respawnPoint, float delay)
+    {
+
+        yield return new WaitForSeconds(delay);
+        transform.position = respawnPoint;
+        playerHud.SetActive(true);
+        deadText.SetActive(false);
+        pause.ResumeGame();
+
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("lava"))
         {
             StartCoroutine(playerDead());
-            
+
         }
     }
 
-    public IEnumerator playerDead(){
-            deadText.SetActive(true);
-            Debug.Log("dead");
-            playerHud.SetActive(false);
-            // Get the respawn point position from PlayerPrefs
-            Vector3 respawnPoint = new Vector3(
-                PlayerPrefs.GetFloat("RespawnX"),
-                PlayerPrefs.GetFloat("RespawnY"),
-                PlayerPrefs.GetFloat("RespawnZ")
-                );
-            pause.Pause();
-            if(Input.GetKey(KeyCode.R)){
-                
-                transitionObject.SetActive(true);
-                yield return new WaitForSeconds(2f);
-                SceneManager.LoadSceneAsync(sceneToReLoad);
-                // Debug.Log("Resume");
-                // StartCoroutine(loadingScript.restartLoad());
-                // StartCoroutine(RespawnAfterDelay(respawnPoint, 1f)); 
-                // deadText.SetActive(false);
-                // playerHealth.returnDead(); 
+    public IEnumerator playerDead()
+    {
+        deadText.SetActive(true);
+        Debug.Log("dead");
+        playerHud.SetActive(false);
+        // Get the respawn point position from PlayerPrefs
+        Vector3 respawnPoint = new Vector3(
+            PlayerPrefs.GetFloat("RespawnX"),
+            PlayerPrefs.GetFloat("RespawnY"),
+            PlayerPrefs.GetFloat("RespawnZ")
+            );
+        pause.Pause();
+        if (Input.GetKey(KeyCode.R))
+        {
+            yield return new WaitForSeconds(3f); 
+            // Load the new scene additively
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToReLoad, LoadSceneMode.Single);
 
-            }
+
+            // Debug.Log("Resume");
+            // StartCoroutine(loadingScript.restartLoad());
+            // StartCoroutine(RespawnAfterDelay(respawnPoint, 1f)); 
+            // deadText.SetActive(false);
+            // playerHealth.returnDead(); 
+
+        }
     }
 
 }
