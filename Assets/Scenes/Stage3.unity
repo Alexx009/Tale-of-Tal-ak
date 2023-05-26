@@ -26633,6 +26633,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 195052706}
     m_Modifications:
+    - target: {fileID: 2011073721154062953, guid: b6cc63ce9d0139f43ba962bf93d9577d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 719f7c493284b9c4b99ec1ca030e1ae0,
+        type: 3}
     - target: {fileID: 4395015780358027734, guid: b6cc63ce9d0139f43ba962bf93d9577d,
         type: 3}
       propertyPath: m_Color.a
@@ -46116,18 +46122,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc11f038b935bd84ba0a819ccd592b3b, type: 3}
---- !u!114 &1026196117 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4395015780811542992, guid: b6cc63ce9d0139f43ba962bf93d9577d,
-    type: 3}
-  m_PrefabInstance: {fileID: 602987195}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1030000137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71273,7 +71267,7 @@ MonoBehaviour:
   isAudioPlayed1: 0
   isAudioPlayed2: 0
   audioNumberer: 0
-  playerHealthBar: {fileID: 1026196117}
+  playerHealthBar: {fileID: 0}
 --- !u!82 &1680151444
 AudioSource:
   m_ObjectHideFlags: 0
@@ -71395,7 +71389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueScripStage2: {fileID: 1405138383}
-  healthBar: {fileID: 1026196117}
+  healthBar: {fileID: 0}
   damageAmount: 10
   health: 100
   playerDead: {fileID: 1680151447}
