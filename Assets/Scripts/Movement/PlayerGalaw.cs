@@ -20,7 +20,6 @@ public class PlayerGalaw : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     public Transform groundCheck;
-    public float jumpPadForce = 0f;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     private float x;
@@ -114,7 +113,7 @@ void Update()
             case "JumpPad":
                 audioSource.PlayOneShot(jumpSfx);
                 gravity = -13f;
-                velocity.y = Mathf.Sqrt(jumpPadForce * -2 * gravity);
+                velocity.y = Mathf.Sqrt(10f * -2 * gravity);
                 useTime++;
                 break;
             case "JumpPadAutomatic":

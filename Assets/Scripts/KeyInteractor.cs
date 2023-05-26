@@ -35,6 +35,7 @@ public class KeyInteractor : MonoBehaviour
     [SerializeField] GameObject pressE;
     [SerializeField] GameObject questTitle;
     [SerializeField] GameObject cameron;
+    [SerializeField] DialogueScriptLvl1 dialog;
     Animator questTitleAnimator;
     public int acquiredKey = 0;
     public TMP_Text questText;
@@ -88,9 +89,11 @@ public class KeyInteractor : MonoBehaviour
         {
             if (acquiredKey == 1)
             {
+                dialog.GetKeyAudio();
                 outerKey.SetActive(false);
                 
                 StartCoroutine(SecondWallCoroutine());
+                
             }
         }
         //3rd key
@@ -98,6 +101,7 @@ public class KeyInteractor : MonoBehaviour
         {
             if (acquiredKey == 2)
             {
+                dialog.GetKeyAudio();
                 thirdKey.SetActive(false);
 
                 StartCoroutine(ThirdWallCoroutine());
@@ -109,6 +113,7 @@ public class KeyInteractor : MonoBehaviour
            
             if (acquiredKey == 3)
             {
+                dialog.FindPalawAudio();
                 lvlComplete.text = "Level 4: Complete";
                 questText.text = "Finding Palaw\r\n\r\nLevel 5: Find the second Palaw in the Map to complete the stage\r\n";
                 StartCoroutine(PalawTwoCoro());
@@ -121,6 +126,7 @@ public class KeyInteractor : MonoBehaviour
 
             if (acquiredKey == 4)
             {
+                dialog.FindPalawAudio();
                 lvlComplete.text = "Level 5: Complete";
                 questText.text = "Finding Palaw\r\n\r\nProceed:Go to the teleporter to enter Stage 2\r\n";
                 StartCoroutine(PalawLastCoro());

@@ -39,6 +39,8 @@ TagManager:
   - TutorialPortal
   - lastTele
   - instakill
+  - Tricky
+  - Success
   layers:
   - Default
   - TransparentFX
