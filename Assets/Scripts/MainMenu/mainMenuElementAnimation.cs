@@ -13,6 +13,7 @@ public class mainMenuElementAnimation : MonoBehaviour
     public GameObject[] buttons;
     public GameObject titlePanel;
     public RectTransform settingsPanelRect;
+     public RectTransform stagePanelRect;
 
     public void Start() {
 
@@ -28,6 +29,8 @@ public class mainMenuElementAnimation : MonoBehaviour
         titlePanelRect.LeanMoveX(1000, 1).setEase(inType).setDelay(1);
 
         settingsPanelRect.LeanSetPosX(220);
+        stagePanelRect.LeanSetPosX(220);
+        
 
         int space = -200; // Set the spacing between buttons
 
@@ -72,9 +75,18 @@ public class mainMenuElementAnimation : MonoBehaviour
 
     public void settings(){
         settingsPanelRect.LeanMoveX(1300, 1).setEase(inType);
+          stagePanelRect.LeanMoveX(3000, 1).setEase(inType);
     }
         public void settingsClose(){
         settingsPanelRect.LeanMoveX(3000, 1).setEase(inType);
+    }
+     public void stages(){
+        stagePanelRect.LeanMoveX(1300, 1).setEase(inType);
+         settingsPanelRect.LeanMoveX(3000, 1).setEase(inType);
+        
+    }
+        public void stagesClose(){
+        stagePanelRect.LeanMoveX(3000, 1).setEase(inType);
     }
 
     public void Play(){
