@@ -24,6 +24,11 @@ public class bridgeMove : MonoBehaviour
     public string objectId;
     public Animator leverAnim;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())

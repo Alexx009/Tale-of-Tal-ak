@@ -1292,11 +1292,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70ba4bfb104a6d46957fa7b29a3b454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScript: {fileID: 0}
+  transition: {fileID: 0}
+  transitionObject: {fileID: 0}
   pause: {fileID: 0}
   playerHud: {fileID: 0}
   playerHealth: {fileID: 0}
   deadText: {fileID: 0}
+  dialogueScripStage2: {fileID: 0}
   sceneToReLoad: 
 --- !u!4 &7468756748066800980 stripped
 Transform:
