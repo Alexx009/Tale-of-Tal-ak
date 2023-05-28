@@ -68777,8 +68777,8 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 3227d13daa269b242b72e96605322595, type: 3}
   transition: {fileID: 1641983394}
   loadingOff: {fileID: 158871235}
-  levelToLoad: mainMenu
-  levelToReload: 
+  levelToLoad: EndScene
+  levelToReload: Stage3
   videoPlayer: {fileID: 1641983392}
 --- !u!1 &1609825957
 GameObject:
