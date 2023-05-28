@@ -6,8 +6,11 @@ public class DialogueScriptLvl1 : MonoBehaviour
 {
 
     public AudioSource audioSource;
+    public AudioSource ambianceSource;
     public AudioClip[] dialogueSfx;
     public AudioClip[] getKeyDialogue;
+    public AudioClip[] ambianceSfx;
+    public AudioClip[] catchPhrase;
     public AudioClip startDialogue;
     public AudioClip findPalawDialogue;
     public AudioClip missionDialogue;
@@ -20,15 +23,12 @@ public class DialogueScriptLvl1 : MonoBehaviour
         Invoke("StartDialogue", 7f);
         Invoke("MissionAudio", 15f);
         Invoke("DialoguePlay", 60f);
+        Invoke("AmbianceSfx", 20f);
 
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
     void StartDialogue()
     {
         audioSource.PlayOneShot(startDialogue);
@@ -43,6 +43,18 @@ public class DialogueScriptLvl1 : MonoBehaviour
         audioSource.PlayOneShot(dialogueSfx[dialogueIndex]);
         Invoke("DialoguePlay", Random.Range(10, 30));
     }
+    void AmbianceSfx()
+    {
+        dialogueIndex = Random.Range(0, ambianceSfx.Length);
+        ambianceSource.PlayOneShot(ambianceSfx[dialogueIndex]);
+        Invoke("ambiance play", Random.Range(1, 3));
+    }
+    void CatchPhrase()
+    {
+        dialogueIndex = Random.Range(0, catchPhrase.Length);
+        audioSource.PlayOneShot(catchPhrase[dialogueIndex]);
+        Invoke("DialoguePlay", Random.Range(10, 20));
+    }
 
     public void GetKeyAudio()
     {
@@ -51,7 +63,6 @@ public class DialogueScriptLvl1 : MonoBehaviour
     }
     public void FindPalawAudio()
     {
-        dialogueIndex = Random.Range(0, dialogueSfx.Length);
-        audioSource.PlayOneShot(getKeyDialogue[dialogueIndex]);
+        audioSource.PlayOneShot(findPalawDialogue);
     }
 }

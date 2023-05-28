@@ -16,6 +16,7 @@ public class loadingVideo : MonoBehaviour
     public VideoClip[] videoClips;
     public GameObject transition;
     public GameObject loadingOff;
+    public GameObject transitionSfx;
     public string levelToLoad;
     public string levelToReload;
 
@@ -24,6 +25,7 @@ public class loadingVideo : MonoBehaviour
     public void Start()
     {
         transition.SetActive(false);
+        transitionSfx.SetActive(false);
         // loadingScreen.SetActive(true);
         // StartCoroutine(loadLevel());
 
@@ -48,6 +50,7 @@ public class loadingVideo : MonoBehaviour
         loadingScreen.SetActive(true);
         
         yield return new WaitForSeconds(5f);
+        transitionSfx.SetActive(true);
         transition.SetActive(true);
         yield return new WaitForSeconds(1.4f);
 
@@ -114,6 +117,7 @@ public class loadingVideo : MonoBehaviour
         // Wait for the new scene to finish loading
         while (!asyncLoad.isDone)
         {
+            transitionSfx.SetActive(true);
             transition.SetActive(true);
             yield return new WaitForSeconds(1.5f);
             // Unload the previous scene

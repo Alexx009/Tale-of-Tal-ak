@@ -11431,6 +11431,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio
       objectReference: {fileID: 0}
+    - target: {fileID: 7806107474896567973, guid: 7a4817398e852f047914dc1b70ef98fd,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f3dc8ab16a3e04c4ea712f4044f38be1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a4817398e852f047914dc1b70ef98fd, type: 3}
 --- !u!82 &811014020 stripped
@@ -11442,6 +11447,12 @@ AudioSource:
 --- !u!82 &811014021 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7806107474574854573, guid: 7a4817398e852f047914dc1b70ef98fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 811014019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &811014022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7806107474896567975, guid: 7a4817398e852f047914dc1b70ef98fd,
     type: 3}
   m_PrefabInstance: {fileID: 811014019}
   m_PrefabAsset: {fileID: 0}
@@ -17977,6 +17988,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 3227d13daa269b242b72e96605322595, type: 3}
   transition: {fileID: 195390275}
   loadingOff: {fileID: 559957379}
+  transitionSfx: {fileID: 811014022}
   levelToLoad: IntrodcutionScene
   levelToReload: Tutorial
   videoPlayer: {fileID: 342028607}
