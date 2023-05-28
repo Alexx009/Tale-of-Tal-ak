@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6765,6 +6765,11 @@ PrefabInstance:
       propertyPath: dialogueScripStage2
       value: 
       objectReference: {fileID: 1405138383}
+    - target: {fileID: 2903395928258524917, guid: cbd3e1a25fb4c6548be1f7166e669563,
+        type: 3}
+      propertyPath: m_CameraType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7468756747847753518, guid: cbd3e1a25fb4c6548be1f7166e669563,
         type: 3}
       propertyPath: jumpSfx
@@ -6865,6 +6870,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7468756748066800981, guid: cbd3e1a25fb4c6548be1f7166e669563,
+        type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468756748066800981, guid: cbd3e1a25fb4c6548be1f7166e669563,
+        type: 3}
+      propertyPath: m_Cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 1130289108}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbd3e1a25fb4c6548be1f7166e669563, type: 3}
 --- !u!95 &59306015 stripped
@@ -26633,6 +26648,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 195052706}
     m_Modifications:
+    - target: {fileID: 493717726423884747, guid: b6cc63ce9d0139f43ba962bf93d9577d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493717726423884749, guid: b6cc63ce9d0139f43ba962bf93d9577d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011073719943840608, guid: b6cc63ce9d0139f43ba962bf93d9577d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2011073721154062953, guid: b6cc63ce9d0139f43ba962bf93d9577d,
         type: 3}
       propertyPath: m_Sprite
@@ -26807,6 +26837,16 @@ PrefabInstance:
     - target: {fileID: 4395015782325495043, guid: b6cc63ce9d0139f43ba962bf93d9577d,
         type: 3}
       propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395015782325495043, guid: b6cc63ce9d0139f43ba962bf93d9577d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395015782325495053, guid: b6cc63ce9d0139f43ba962bf93d9577d,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -38905,7 +38945,8 @@ AudioSource:
   m_GameObject: {fileID: 804643502}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 9b42febedeeee90448962234c11b6411,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 8edf2e9e204bd5d4da35a17bfb9f988d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -48182,6 +48223,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 602987195}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1130289108 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5071302796132286911, guid: cbd3e1a25fb4c6548be1f7166e669563,
+    type: 3}
+  m_PrefabInstance: {fileID: 59306014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1131660880
 GameObject:
   m_ObjectHideFlags: 0
@@ -50768,7 +50815,8 @@ AudioSource:
   m_GameObject: {fileID: 136772136}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c2e10331b5ed7964e8da42694e53b4ca,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -50875,6 +50923,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c06c07caedcdd9a46a19a72700dda8a9, type: 3}
   minDistance: 50
   maxDistance: 100
+  audioSource: {fileID: 1234797014}
 --- !u!1 &1235967888
 GameObject:
   m_ObjectHideFlags: 0
@@ -57935,7 +57984,8 @@ AudioSource:
   m_GameObject: {fileID: 1410720344}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c2e10331b5ed7964e8da42694e53b4ca,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -58042,6 +58092,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c06c07caedcdd9a46a19a72700dda8a9, type: 3}
   minDistance: 50
   maxDistance: 100
+  audioSource: {fileID: 1410720346}
 --- !u!1 &1416216791
 GameObject:
   m_ObjectHideFlags: 0
@@ -66752,7 +66803,8 @@ AudioSource:
   m_GameObject: {fileID: 240614600}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c2e10331b5ed7964e8da42694e53b4ca,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -66859,6 +66911,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c06c07caedcdd9a46a19a72700dda8a9, type: 3}
   minDistance: 50
   maxDistance: 100
+  audioSource: {fileID: 1554892011}
 --- !u!1 &1558271618 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 942edcb4aaeb7b144bb9a91fa82b307b,
@@ -71283,7 +71336,8 @@ AudioSource:
   m_GameObject: {fileID: 1680151419}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c2e10331b5ed7964e8da42694e53b4ca,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: e7d01fd7743b8a74dad0645a2bed846c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -89558,7 +89612,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083560325}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 957d7da9cdfa41a4b832f097c0617e03, type: 2}
   m_CullingMode: 0

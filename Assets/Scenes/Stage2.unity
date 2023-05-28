@@ -7182,7 +7182,7 @@ GameObject:
   - component: {fileID: 223728489}
   m_Layer: 0
   m_Name: jumpPAd
-  m_TagString: Untagged
+  m_TagString: JumpPadAutomatic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7214,8 +7214,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0.74, z: 0}
+  m_Size: {x: 0.75904936, y: 2.4799454, z: 0.74699414}
+  m_Center: {x: 0.02452805, y: 0.22478473, z: 0.046266127}
 --- !u!23 &223728490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64719,6 +64719,11 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 493717726423884747, guid: b6cc63ce9d0139f43ba962bf93d9577d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2011073721154062953, guid: b6cc63ce9d0139f43ba962bf93d9577d,
         type: 3}
       propertyPath: m_Sprite
@@ -64854,6 +64859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395015782325495043, guid: b6cc63ce9d0139f43ba962bf93d9577d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6cc63ce9d0139f43ba962bf93d9577d, type: 3}
@@ -73903,7 +73913,7 @@ PrefabInstance:
     - target: {fileID: 6853189375521578121, guid: 9b23753e5d067604487c5a3e5e224010,
         type: 3}
       propertyPath: m_SlopeLimit
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6853189375521578121, guid: 9b23753e5d067604487c5a3e5e224010,
         type: 3}
