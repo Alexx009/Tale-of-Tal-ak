@@ -32,7 +32,7 @@ public class inGameSettings : MonoBehaviour
             }
             if (!settingsOpen)
             {
-                StartCoroutine(settingsClose());
+                StartCoroutine(SettingsClose());
             }
         }
     }
@@ -58,7 +58,7 @@ public class inGameSettings : MonoBehaviour
         settingsOpen = false;
     }
 
-    public IEnumerator settingsClose()
+    public IEnumerator SettingsClose()
     {
         settings.togglePause();
         settingsPanelRect.LeanMoveX(2000, 0.5f).setEase(inType);
@@ -74,5 +74,9 @@ public class inGameSettings : MonoBehaviour
         yield return new WaitUntil(() => settingsPanelRect.anchoredPosition.x == 2000);
         Cursor.lockState = CursorLockMode.Locked;
         settingsOpen = true;
+    }
+    public void Close()
+    {
+        StartCoroutine(SettingsClose());
     }
 }

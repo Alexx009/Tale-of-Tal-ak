@@ -8,7 +8,7 @@ public class RandomGrowlSound : MonoBehaviour
     public float minDistance = 10f; // Minimum distance for the sound to be heard clearly
     public float maxDistance = 20f; // Maximum distance at which the sound can be heard
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private void Start()
     {
