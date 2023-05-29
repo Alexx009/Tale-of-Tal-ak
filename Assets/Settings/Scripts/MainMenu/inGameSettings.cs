@@ -16,6 +16,8 @@ public class inGameSettings : MonoBehaviour
     // Get a reference to the Image component
     public Image bgImage;
 
+    public int sliderVariable = 0;
+
     private void Start()
     {
         settingsPanelRect.LeanMoveX(2000, 0.01f).setEase(inType);
@@ -23,19 +25,25 @@ public class inGameSettings : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && sliderVariable == 0)
         {
-
-            if (settingsOpen)
-            {
-                Cursor.visible = true;
-                StartCoroutine(SettingsOpen());
-            }
-            if (!settingsOpen)
-            {
-                Cursor.visible = false;
-                StartCoroutine(SettingsClose());
-            }
+            Cursor.visible = true;
+            StartCoroutine(SettingsOpen());
+            /*   if (settingsOpen)
+              {
+                  Cursor.visible = true;
+                  StartCoroutine(SettingsOpen());
+              }
+              if (!settingsOpen)
+              {
+                  Cursor.visible = false;
+                  StartCoroutine(SettingsClose());
+              } */
+        }
+         if (Input.GetKeyDown(KeyCode.Escape) && sliderVariable == 1)
+        {
+                    Cursor.visible = false;
+                  StartCoroutine(SettingsClose());
         }
     }
 
@@ -57,6 +65,7 @@ public class inGameSettings : MonoBehaviour
         bgImage.color = color;
 
         yield return new WaitUntil(() => settingsPanelRect.anchoredPosition.x == 0);
+        sliderVariable = 1;
         settingsOpen = false;
     }
 
@@ -74,6 +83,7 @@ public class inGameSettings : MonoBehaviour
         bgImage.color = color;
 
         yield return new WaitUntil(() => settingsPanelRect.anchoredPosition.x == 2000);
+        sliderVariable = 0;
         Cursor.lockState = CursorLockMode.Locked;
         settingsOpen = true;
     }

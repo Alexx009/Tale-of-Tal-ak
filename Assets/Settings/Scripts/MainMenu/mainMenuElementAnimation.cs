@@ -95,6 +95,10 @@ public class mainMenuElementAnimation : MonoBehaviour
         stagePanelRect.LeanMoveX(3000, 1).setEase(inType);
     }
 
+    private void Update() {
+        Cursor.visible = true;
+    }
+
     public void Play()
     {
 
