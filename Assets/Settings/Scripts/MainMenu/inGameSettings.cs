@@ -28,10 +28,12 @@ public class inGameSettings : MonoBehaviour
 
             if (settingsOpen)
             {
+                Cursor.visible = true;
                 StartCoroutine(SettingsOpen());
             }
             if (!settingsOpen)
             {
+                Cursor.visible = false;
                 StartCoroutine(SettingsClose());
             }
         }
