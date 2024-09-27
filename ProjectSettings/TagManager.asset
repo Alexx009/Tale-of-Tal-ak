@@ -5,17 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - death
-  - Bullet
-  - Ground
-  - Button
-  - Button1
-  - Button2
-  - Button3
-  - Button4
-  - Button5
-  - Bullet
-  - JumpPad
   - teleport
+<<<<<<< Updated upstream
+=======
   - MovingPlatform
   - JumpPadAutomatic
   - JumpPadAutomatic30
@@ -23,6 +15,15 @@ TagManager:
   - Enemy
   - lava
   - RespawnPoint
+  - Dolphin
+  - tentacle
+  - octofood
+  - octoFoodLand
+  - tentacleTrigger
+  - instakill
+  - TutorialPortal
+  - lastTele
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -31,6 +32,23 @@ TagManager:
   - Water
   - UI
   - Interactable
+<<<<<<< Updated upstream
+  - 
+  - pangPader
+  - pangkeylang
+  - pangPalaw
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+=======
   - Button
   - Wall
   - Obstacle
@@ -39,13 +57,14 @@ TagManager:
   - Enemy
   - bridgeButton
   - lava
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - buttoners
+  - pangKey
+  - wallOne
+  - wallTwo
+  - wallThree
+  - hands
+  - box
+>>>>>>> Stashed changes
   - 
   - 
   - 

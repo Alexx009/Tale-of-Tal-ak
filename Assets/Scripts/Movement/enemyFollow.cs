@@ -21,6 +21,8 @@ public class enemyFollow : MonoBehaviour
 
     public bool followPlayer = true;
 
+    public playerHealth playerHealth;
+
     void Start()
     {
         // Find the player object
@@ -45,7 +47,7 @@ public class enemyFollow : MonoBehaviour
         // Calculate the distance between the player and this enemy
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= visionDistance && followPlayer)
+        if (distanceToPlayer <= visionDistance && followPlayer && playerHealth.health >= 1)
         {
             
             // Create a ray from this enemy towards the player

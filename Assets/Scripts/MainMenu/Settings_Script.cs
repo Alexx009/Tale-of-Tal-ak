@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-
+using TMPro;
 public class Settings_Script : MonoBehaviour
 {
-    public Dropdown dropdown; // Reference to the Dropdown component
-    public Text text; // Reference to the Text component of the Dropdown's Label
+    public TMP_Dropdown dropdown; // Reference to the Dropdown component
+    public TextMeshProUGUI text; // Reference to the Text component of the Dropdown's Label
     
     
     public Toggle fullscreenToggle; // Reference for Toggle
@@ -58,7 +58,7 @@ public class Settings_Script : MonoBehaviour
         foreach (Resolution resolution in resolutions)
         {
             string optionText = resolution.width + " x " + resolution.height;
-            Dropdown.OptionData option = new Dropdown.OptionData(optionText);
+            TMP_Dropdown.OptionData option = new TMP_Dropdown.OptionData(optionText);
             dropdown.options.Add(option);
 
             // If the resolution matches the current screen resolution, set it as the default selected option
@@ -67,6 +67,7 @@ public class Settings_Script : MonoBehaviour
                 int optionIndex = dropdown.options.Count - 1;
                 dropdown.value = optionIndex;
             }
+
         }
     }
 
@@ -99,14 +100,14 @@ public class Settings_Script : MonoBehaviour
 
 // VOLUME
     public void setAudio (float volume) {
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.SetFloat("Audio", volume);
     }
 
 
 
 // Music
     public void setMusic (float volume) {
-        audioMixer.SetFloat("volume", volume);
+        musicMixer.SetFloat("Music", volume);
     }
 
 

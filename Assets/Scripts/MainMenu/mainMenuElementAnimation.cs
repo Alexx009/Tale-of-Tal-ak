@@ -71,10 +71,10 @@ public class mainMenuElementAnimation : MonoBehaviour
     }
 
     public void settings(){
-        settingsPanelRect.LeanMoveX(1120, 1).setEase(inType);
+        settingsPanelRect.LeanMoveX(1300, 1).setEase(inType);
     }
         public void settingsClose(){
-        settingsPanelRect.LeanMoveX(2220, 1).setEase(inType);
+        settingsPanelRect.LeanMoveX(3000, 1).setEase(inType);
     }
 
     public void Play(){

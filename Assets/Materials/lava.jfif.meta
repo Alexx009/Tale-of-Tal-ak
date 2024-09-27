@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/secondKey.prefab.meta
+guid: 2d08c0947c10d7442be2e2c41dd1e5e0
+PrefabImporter:
+========
 guid: 66752eb2dde11db4b8833cc7d5e6c801
 DefaultImporter:
+>>>>>>>> main:Assets/Materials/lava.jfif.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

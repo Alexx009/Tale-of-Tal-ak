@@ -13,22 +13,29 @@ public class loadingScript : MonoBehaviour
     
     [SerializeField] private Slider loadingSlider;
     [SerializeField] private Settings_Script pause;
-    [SerializeField] private TextMeshProUGUI dead;
-    [SerializeField] private TextMeshProUGUI pressR;
+    public GameObject transition;
+
+    public GameObject deadText;
 
 
     private void Start() {
-
+        transition.SetActive(false);
+        loadingScreen.SetActive(false);
+        deadText.SetActive(false);
     }
     public IEnumerator restartLoad(){
         loadingScreen.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        loadingScreen.SetActive(value: false);
-        dead.enabled = false;
-        pressR.enabled = false;
+        transition.SetActive(true);
+        deadText.SetActive(false);
+        yield return new WaitForSeconds(1.2f);
+        loadingScreen.SetActive(false);
         pause.ResumeGame();
-
         Debug.Log("loading");
+        yield return new WaitForSeconds(2.4f);
+        
+        transition.SetActive(false);
+        
+        
         
 
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TentacleHit : MonoBehaviour
 {
-    public float knockbackForce = 10f;
+    public float knockbackForce = 250f;
     public float knockbackDuration = 0.5f;
 
     private CharacterController characterController;
@@ -19,6 +19,16 @@ public class TentacleHit : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("tentacle"))
+        {
+            // Calculate the direction of the knockback
+            knockbackDirection = transform.position - other.transform.position;
+            knockbackDirection.y = 0f;
+            knockbackDirection.Normalize();
+
+            // Set the knockback end time
+            knockbackEndTime = Time.time + knockbackDuration;
+        }
+         if (other.CompareTag("air"))
         {
             // Calculate the direction of the knockback
             knockbackDirection = transform.position - other.transform.position;
